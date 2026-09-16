@@ -272,6 +272,34 @@
   }
 
   /* ---------------------------------------------------------------- */
+  /* Time-aware greeting + live local date/time                        */
+  /* ---------------------------------------------------------------- */
+  function timeGreeting(hour) {
+    if (hour >= 5 && hour < 12) return "Good morning";
+    if (hour >= 12 && hour < 17) return "Good afternoon";
+    if (hour >= 17 && hour < 22) return "Good evening";
+    return "Good night";
+  }
+
+  function applyLiveTime() {
+    var now = new Date();
+    var greeting = timeGreeting(now.getHours());
+
+    document.querySelectorAll(".js-time-greeting").forEach(function (el) {
+      el.textContent = greeting;
+    });
+
+    document.querySelectorAll(".js-live-datetime").forEach(function (el) {
+      var opts = { weekday: "long", day: "numeric", month: "long", hour: "numeric", minute: "2-digit" };
+      el.textContent = now.toLocaleString(undefined, opts);
+    });
+  }
+
+  applyLiveTime();
+  // keep it honest if the dashboard is left open across a time-of-day boundary
+  setInterval(applyLiveTime, 60000);
+
+  /* ---------------------------------------------------------------- */
   /* Geo marker hover emphasis                                          */
   /* ---------------------------------------------------------------- */
   document.querySelectorAll(".geo-marker").forEach(function (marker) {

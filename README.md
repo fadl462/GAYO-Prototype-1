@@ -42,6 +42,24 @@ project row and card links to the same demo project (Zero Waste Accra) rather
 than to 245 individual pages. Wiring it to a real per-project URL is the
 natural next step once this connects to actual data.
 
+## The Africa map
+
+`GIS & Locations` (and the "Where GAYO Works" panel on the Executive
+Overview) render a **real map of Africa** — actual country boundaries from
+Natural Earth data (via the `world-atlas`/`topojson` public datasets), not a
+stylized icon. Office markers sit at each country's real geographic centroid.
+
+Clicking a marker, or a country in the office list, zooms into that
+country's real, accurate shape with a "Full map" button to return. The same
+zoom can be deep-linked directly: `gis.html?focus=Kenya` opens already zoomed
+into Kenya — this is what the Country Offices cards' "View on map" links use.
+
+The map data lives in `assets/js/africa-map-data.js` (generated once at
+authoring time from real boundary data, not hand-drawn) and is rendered by
+`assets/js/africa-map.js`. Extending the focus countries beyond the current
+six (Ghana, Kenya, Nigeria, Uganda, Botswana, Senegal) means re-running the
+generation step against the same public dataset for the new country names.
+
 ## What's inside
 
 ```

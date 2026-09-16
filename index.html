@@ -416,55 +416,20 @@
         </div>
         <div class="geo-panel">
           <div class="geo-map-wrap">
-            <svg viewBox="0 0 300 340" aria-label="Stylized map of GAYO's country offices across Africa">
-              <g stroke="#a7d13d" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.9">
-                <path d="M186 24 C270 72 276 174 234 246" opacity="0.95"/>
-                <path d="M165 48 C234 90 240 168 204 228" opacity="0.8"/>
-                <path d="M147 75 C201 108 207 165 180 213" opacity="0.65"/>
-                <path d="M132 102 C171 126 177 162 159 198" opacity="0.5"/>
-              </g>
-              <path d="M90 264 L120 222" stroke="#a7d13d" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
-              <path d="M66 276 L102 222" stroke="#a7d13d" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
-
-              <!-- markers: approximate relative placement -->
-              <g class="geo-marker" data-country="Ghana">
-                <circle cx="128" cy="150" r="9" fill="#008037" opacity="0.22"/>
-                <circle cx="128" cy="150" r="5" fill="#008037"/>
-              </g>
-              <g class="geo-marker" data-country="Nigeria">
-                <circle cx="150" cy="140" r="8" fill="#008037" opacity="0.2"/>
-                <circle cx="150" cy="140" r="4.5" fill="#008037"/>
-              </g>
-              <g class="geo-marker" data-country="Kenya">
-                <circle cx="205" cy="170" r="9" fill="#00203f" opacity="0.22"/>
-                <circle cx="205" cy="170" r="5" fill="#00203f"/>
-              </g>
-              <g class="geo-marker" data-country="Uganda">
-                <circle cx="188" cy="176" r="7" fill="#00203f" opacity="0.2"/>
-                <circle cx="188" cy="176" r="4" fill="#00203f"/>
-              </g>
-              <g class="geo-marker" data-country="Botswana">
-                <circle cx="195" cy="238" r="8" fill="#a7d13d" opacity="0.28"/>
-                <circle cx="195" cy="238" r="4.5" fill="#6f9f1f"/>
-              </g>
-              <g class="geo-marker" data-country="Senegal">
-                <circle cx="88" cy="130" r="6.5" fill="#008037" opacity="0.2"/>
-                <circle cx="88" cy="130" r="3.6" fill="#008037"/>
-              </g>
-            </svg>
+            <div id="mapStage" class="map-stage"></div>
             <div class="geo-legend">
-              <div><span class="legend-dot" style="background:#008037"></span>Country office</div>
-              <div><span class="legend-dot" style="background:#00203f"></span>East Africa hub</div>
-              <div><span class="legend-dot" style="background:#6f9f1f"></span>Southern Africa hub</div>
+              <div><span class="legend-dot" style="background:#008037"></span>West Africa office</div>
+              <div><span class="legend-dot" style="background:#00203f"></span>East Africa office</div>
+              <div><span class="legend-dot" style="background:#6f9f1f"></span>Southern Africa office</div>
             </div>
           </div>
           <div class="office-list">
-            <div class="office-item"><span class="office-item__flag">GH</span><div><div class="office-item__name">Ghana — HQ</div><div class="office-item__meta">Accra · West Africa</div></div><div class="office-item__stat"><b>62</b><span>projects</span></div></div>
-            <div class="office-item"><span class="office-item__flag">KE</span><div><div class="office-item__name">Kenya</div><div class="office-item__meta">Nairobi · East Africa</div></div><div class="office-item__stat"><b>34</b><span>projects</span></div></div>
-            <div class="office-item"><span class="office-item__flag">NG</span><div><div class="office-item__name">Nigeria</div><div class="office-item__meta">Lagos · West Africa</div></div><div class="office-item__stat"><b>29</b><span>projects</span></div></div>
-            <div class="office-item"><span class="office-item__flag">UG</span><div><div class="office-item__name">Uganda</div><div class="office-item__meta">Kampala · East Africa</div></div><div class="office-item__stat"><b>21</b><span>projects</span></div></div>
-            <div class="office-item"><span class="office-item__flag">BW</span><div><div class="office-item__name">Botswana</div><div class="office-item__meta">Gaborone · Southern Africa</div></div><div class="office-item__stat"><b>14</b><span>projects</span></div></div>
-            <div class="office-item"><span class="office-item__flag">SN</span><div><div class="office-item__name">Senegal</div><div class="office-item__meta">Dakar · West Africa</div></div><div class="office-item__stat"><b>11</b><span>projects</span></div></div>
+            <a class="office-item" href="gis.html" data-focus-country="Ghana" style="text-decoration:none; color:inherit;"><span class="office-item__flag">GH</span><div><div class="office-item__name">Ghana — HQ</div><div class="office-item__meta">Accra · West Africa</div></div><div class="office-item__stat"><b>62</b><span>projects</span></div></a>
+            <a class="office-item" href="gis.html" data-focus-country="Kenya" style="text-decoration:none; color:inherit;"><span class="office-item__flag">KE</span><div><div class="office-item__name">Kenya</div><div class="office-item__meta">Nairobi · East Africa</div></div><div class="office-item__stat"><b>34</b><span>projects</span></div></a>
+            <a class="office-item" href="gis.html" data-focus-country="Nigeria" style="text-decoration:none; color:inherit;"><span class="office-item__flag">NG</span><div><div class="office-item__name">Nigeria</div><div class="office-item__meta">Lagos · West Africa</div></div><div class="office-item__stat"><b>29</b><span>projects</span></div></a>
+            <a class="office-item" href="gis.html" data-focus-country="Uganda" style="text-decoration:none; color:inherit;"><span class="office-item__flag">UG</span><div><div class="office-item__name">Uganda</div><div class="office-item__meta">Kampala · East Africa</div></div><div class="office-item__stat"><b>21</b><span>projects</span></div></a>
+            <a class="office-item" href="gis.html" data-focus-country="Botswana" style="text-decoration:none; color:inherit;"><span class="office-item__flag">BW</span><div><div class="office-item__name">Botswana</div><div class="office-item__meta">Gaborone · Southern Africa</div></div><div class="office-item__stat"><b>14</b><span>projects</span></div></a>
+            <a class="office-item" href="gis.html" data-focus-country="Senegal" style="text-decoration:none; color:inherit;"><span class="office-item__flag">SN</span><div><div class="office-item__name">Senegal</div><div class="office-item__meta">Dakar · West Africa</div></div><div class="office-item__stat"><b>11</b><span>projects</span></div></a>
           </div>
         </div>
       </section>
@@ -632,5 +597,8 @@
 </p>
 <script src="assets/vendor/chart.umd.min.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="assets/js/africa-map-data.js"></script>
+<script src="assets/js/africa-map.js"></script>
+<script>renderAfricaMap("mapStage");</script>
 </body>
 </html>

@@ -1,27 +1,56 @@
-# MIOMS — Executive Overview (Prototype 01)
+# MIOMS — GAYO Digital Operating System (Prototype)
 
 **MERL Integrated Organizational Management System** — GAYO's digital operating
 system for programmes, performance & evidence.
 
-This is a static, front-end-only prototype of the first MIOMS screen: the
-Executive Overview. It's built to match the GAYO brand guidelines (colours,
-tone) and the MIOMS Prototype 01 specification — organization-wide portfolio,
-MERL, finance, beneficiary, geographic and decision-support intelligence in a
-single command-centre view.
+This is a static, front-end-only prototype of MIOMS: 20 fully linked pages
+sharing one consistent sidebar, top bar and footer, built to match the GAYO
+brand guidelines (colours, logo, tone). Every sidebar link, table row, card
+and quick action goes to a real page — nothing dead-ends.
 
 There is no backend. All figures are illustrative demo data, clearly labelled
-as such in the footer of the page — swap in real data once this is wired to
+as such in the footer of every page — swap in real data once this is wired to
 an actual data source.
+
+## Pages
+
+| Page | File |
+|---|---|
+| Executive Overview | `index.html` |
+| My Workspace | `workspace.html` |
+| Thematic Areas | `thematic-areas.html` |
+| Projects | `projects.html` |
+| Project Workspace (template) | `project-workspace.html` |
+| Activities | `activities.html` |
+| MERL | `merl.html` |
+| Data Collection | `data-collection.html` |
+| Beneficiaries | `beneficiaries.html` |
+| GIS & Locations | `gis.html` |
+| Finance | `finance.html` |
+| Departments | `departments.html` |
+| Country Offices | `country-offices.html` |
+| Documents | `documents.html` |
+| Knowledge Centre | `knowledge-centre.html` |
+| Evidence Repository | `evidence-repository.html` |
+| Reports & Analytics | `reports-analytics.html` |
+| Notifications | `notifications.html` |
+| Integrations | `integrations.html` |
+| Administration | `administration.html` |
+
+`project-workspace.html` is a single template — in this prototype every
+project row and card links to the same demo project (Zero Waste Accra) rather
+than to 245 individual pages. Wiring it to a real per-project URL is the
+natural next step once this connects to actual data.
 
 ## What's inside
 
 ```
 gayo-mioms-prototype/
-├── index.html                 ← the whole page
+├── index.html, workspace.html, projects.html, ... (20 pages)
 ├── assets/
-│   ├── css/styles.css         ← design tokens + all component styles
+│   ├── css/styles.css         ← design tokens + every component style, shared by all pages
 │   ├── js/app.js               ← chart setup, tabs, filters, drawer nav
-│   ├── img/                   ← brandmark + decorative ring motif (SVG)
+│   ├── img/                   ← official GAYO logo + brandmark (SVG)
 │   └── vendor/chart.umd.min.js ← Chart.js, vendored locally (no CDN dependency)
 └── README.md
 ```
@@ -50,7 +79,7 @@ python3 -m http.server 8080
    cd gayo-mioms-prototype
    git init
    git add .
-   git commit -m "MIOMS Prototype 01: Executive Overview"
+   git commit -m "MIOMS Prototype — full multi-page build"
    git branch -M main
    git remote add origin https://github.com/<your-username>/<repo-name>.git
    git push -u origin main
@@ -62,24 +91,23 @@ python3 -m http.server 8080
 3. Your prototype will be live at:
    `https://<your-username>.github.io/<repo-name>/`
 
-   (If you're publishing into an existing platform repo — e.g. alongside
-   `gayo-intelligence-platform` — you can instead push this into a
-   subdirectory, or into its own repo and link to it from wherever you're
-   collecting prototype links.)
+## Editing this later
 
-## Notes for the next prototype in the suite
+Every page shares identical sidebar/top bar/footer markup, generated from one
+source so a change (like the logo fix) only has to happen once. If you're
+working in code rather than by hand, the same approach — one shared header/
+footer include, one content block per page — will save you from having to
+hand-edit 20 files every time something in the shell changes.
 
-Per the product hierarchy this prototype establishes (MIOMS → Thematic Area →
-Project → Data → MERL → Evidence → Intelligence → Decision), the natural next
-screens are:
+## Notes for the next phase
 
-- **Project Workspace** — opened when a row in the Project Portfolio table is
-  clicked
-- **Thematic Area Intelligence** — opened from a thematic card's "View
-  Intelligence" link (this is where the existing GAYO Environmental
-  Intelligence Platform can plug in as the Zero Waste Cities workspace)
-- **MERL / Data Collection** workspace
-- **GIS & Locations** full-screen explorer
-
-The sidebar navigation, header, and design tokens in `styles.css` are already
-structured so those screens can reuse the same shell.
+- **Per-project pages**: `project-workspace.html` is currently one template
+  shared by every project link. A real build would generate one per project
+  (or load data dynamically via query string / backend).
+- **Thematic Area Intelligence**: the thematic cards currently link to
+  `thematic-areas.html`. This is where the existing GAYO Environmental
+  Intelligence Platform could plug in as the dedicated Zero Waste Cities
+  workspace.
+- **Forms**: Data Collection, Add Indicator, Register Beneficiary and similar
+  "create" actions currently link to their list page rather than opening a
+  form — the next layer of interactivity is wiring up actual input forms.

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notifications | MIOMS · GAYO</title>
+<meta name="description" content="System-wide notifications across projects, MERL, finance and reporting.">
+<link rel="icon" href="assets/img/brandmark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<svg style="display:none">
+  <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-6h4v6"/></symbol>
+  <symbol id="ic-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.2"/></symbol>
+  <symbol id="ic-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8.5 12 14l9-5.5L12 3Z"/><path d="M3 14.5 12 20l9-5.5"/><path d="M3 11.5 12 17l9-5.5"/></symbol>
+  <symbol id="ic-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5a1.5 1.5 0 0 1 1.5-1.5h4l2 2.2h7A1.5 1.5 0 0 1 20 8.7v9.3a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18V6.5Z"/></symbol>
+  <symbol id="ic-check-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M8 12.2 10.8 15 16 9"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></symbol>
+  <symbol id="ic-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="16" rx="2"/><rect x="9" y="3" width="6" height="3" rx="1"/><path d="M8.5 11h7M8.5 15h7"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.7 14.6c2.4.4 4 2.1 4 4.9"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="ic-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M16.5 7.2c-.8-1-2.3-1.7-4-1.7-2.3 0-4.2 1.3-4.2 3s1.9 2.6 4.2 3 4.2 1.3 4.2 3-1.9 3-4.2 3c-1.9 0-3.5-.8-4.2-2"/></symbol>
+  <symbol id="ic-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="9" height="17" rx="1"/><path d="M14 9h5v11.5h-5"/><path d="M8 7.5h2M8 11h2M8 14.5h2"/></symbol>
+  <symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M4 12h16M12 3.8c2.4 2.2 3.6 5.2 3.6 8.2s-1.2 6-3.6 8.2c-2.4-2.2-3.6-5.2-3.6-8.2S9.6 6 12 3.8Z"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h7l4 4v12.5a1 1 0 0 1-1 1h-10a1 1 0 0 1-1-1v-15.5a1 1 0 0 1 1-1Z"/><path d="M13.2 3.6V8h4.2"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.2c2-1 5-1 8 .6 3-1.6 6-1.6 8-.6v14c-2-1-5-1-8 .6-3-1.6-6-1.6-8-.6Z"/><path d="M12 5.8v14"/></symbol>
+  <symbol id="ic-archive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="4.2" rx="1"/><path d="M4.7 8.2v10a1.3 1.3 0 0 0 1.3 1.3h12a1.3 1.3 0 0 0 1.3-1.3v-10"/><path d="M10 12.2h4"/></symbol>
+  <symbol id="ic-bar-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V10M12 20V4M19 20v-7"/><path d="M3 20.3h18"/></symbol>
+  <symbol id="ic-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10.5a6 6 0 0 1 12 0c0 4 1.4 5.4 1.4 5.4H4.6S6 14.5 6 10.5Z"/><path d="M10 19a2.2 2.2 0 0 0 4 0"/></symbol>
+  <symbol id="ic-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5 14.5 9.5"/><path d="M11 7.2l1.4-1.4a3.6 3.6 0 1 1 5 5L16 12.2"/><path d="M13 16.8l-1.4 1.4a3.6 3.6 0 1 1-5-5l1.4-1.4"/></symbol>
+  <symbol id="ic-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.3 12a7.3 7.3 0 0 0-.12-1.32l2-1.55-2-3.46-2.36.95a7.4 7.4 0 0 0-2.28-1.32l-.36-2.5h-4l-.36 2.5a7.4 7.4 0 0 0-2.28 1.32l-2.36-.95-2 3.46 2 1.55a7.5 7.5 0 0 0 0 2.64l-2 1.55 2 3.46 2.36-.95c.68.57 1.45 1.02 2.28 1.32l.36 2.5h4l.36-2.5a7.4 7.4 0 0 0 2.28-1.32l2.36.95 2-3.46-2-1.55c.08-.43.12-.87.12-1.32Z"/></symbol>
+  <symbol id="ic-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="ic-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M9.5 9.3a2.6 2.6 0 1 1 3.7 2.3c-.9.5-1.2 1-1.2 2"/><circle cx="12" cy="16.3" r="0.6" fill="currentColor"/></symbol>
+  <symbol id="ic-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="ic-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="ic-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.5" width="16" height="15" rx="2"/><path d="M4 9.5h16M8 3.5v4M16 3.5v4"/></symbol>
+  <symbol id="ic-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.6 9l5.4 1.6L13.6 12l-1.6 5.5L10.4 12 5 10.6 10.4 9Z"/><path d="M19 16.5l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7Z"/></symbol>
+  <symbol id="ic-alert-triangle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 21 19.5H3Z"/><path d="M12 10v4.4"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></symbol>
+  <symbol id="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15.5V4M8 8l4-4 4 4"/><path d="M4.5 15.5v3a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-3"/></symbol>
+  <symbol id="ic-file-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h7l4 4v12.5a1 1 0 0 1-1 1h-10a1 1 0 0 1-1-1v-15.5a1 1 0 0 1 1-1Z"/><path d="M12 12v5M9.5 14.5h5"/></symbol>
+  <symbol id="ic-user-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19.5c0-3 2.5-5.2 5.5-5.2s5.5 2.2 5.5 5.2"/><path d="M18 8v5M15.5 10.5h5"/></symbol>
+  <symbol id="ic-form" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="15" height="17" rx="1.5"/><path d="M8 8.5h8M8 12h8M8 15.5h5"/></symbol>
+  <symbol id="ic-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 11l4 4 4-4"/><path d="M4.5 16.5v3a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-3"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 19 6.5v5.5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6.5L12 3.5Z"/><path d="M9 12l2 2 4-4.5"/></symbol>
+</svg>
+
+<div class="app">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__brand">
+      <a href="index.html" style="display:flex;align-items:center;">
+        <img class="sidebar__logo" src="assets/img/gayo-logo-ko.svg" alt="GAYO — Green Africa Youth Organization">
+      </a>
+      <button class="sidebar__close" id="sidebarClose" aria-label="Close menu"><svg><use href="#ic-x"/></svg></button>
+    </div>
+
+    <nav class="sidebar__nav" aria-label="Primary">
+      <div class="sidebar__group-label">Overview</div>
+      <a class="navlink" href="index.html"><svg><use href="#ic-home"/></svg>Executive Overview</a>
+      <a class="navlink" href="workspace.html"><svg><use href="#ic-grid"/></svg>My Workspace</a>
+
+      <div class="sidebar__group-label">Programme</div>
+      <a class="navlink" href="thematic-areas.html"><svg><use href="#ic-layers"/></svg>Thematic Areas</a>
+      <a class="navlink" href="projects.html"><svg><use href="#ic-folder"/></svg>Projects</a>
+      <a class="navlink" href="activities.html"><svg><use href="#ic-check-square"/></svg>Activities</a>
+      <a class="navlink" href="merl.html"><svg><use href="#ic-target"/></svg>MERL</a>
+      <a class="navlink" href="data-collection.html"><svg><use href="#ic-clipboard"/></svg>Data Collection</a>
+      <a class="navlink" href="beneficiaries.html"><svg><use href="#ic-users"/></svg>Beneficiaries</a>
+      <a class="navlink" href="gis.html"><svg><use href="#ic-pin"/></svg>GIS & Locations</a>
+
+      <div class="sidebar__group-label">Organization</div>
+      <a class="navlink" href="finance.html"><svg><use href="#ic-dollar"/></svg>Finance</a>
+      <a class="navlink" href="departments.html"><svg><use href="#ic-building"/></svg>Departments</a>
+      <a class="navlink" href="country-offices.html"><svg><use href="#ic-globe"/></svg>Country Offices</a>
+
+      <div class="sidebar__group-label">Knowledge</div>
+      <a class="navlink" href="documents.html"><svg><use href="#ic-file"/></svg>Documents</a>
+      <a class="navlink" href="knowledge-centre.html"><svg><use href="#ic-book"/></svg>Knowledge Centre</a>
+      <a class="navlink" href="evidence-repository.html"><svg><use href="#ic-archive"/></svg>Evidence Repository</a>
+      <a class="navlink" href="reports-analytics.html"><svg><use href="#ic-bar-chart"/></svg>Reports & Analytics</a>
+
+      <div class="sidebar__group-label">System</div>
+      <a class="navlink is-active" href="notifications.html"><svg><use href="#ic-bell"/></svg>Notifications<span class="navlink__badge">6</span></a>
+      <a class="navlink" href="integrations.html"><svg><use href="#ic-link"/></svg>Integrations</a>
+      <a class="navlink" href="administration.html"><svg><use href="#ic-settings"/></svg>Administration</a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <img class="sidebar__footer-mark" src="assets/img/brandmark-white.svg" alt="">
+      <div class="sidebar__footer-text"><b>GAYO</b>Green Africa Youth Organization</div>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="main" id="top">
+
+    <header class="topbar">
+      <button class="topbar__menu-btn" id="menuBtn" aria-label="Open menu"><svg><use href="#ic-menu"/></svg></button>
+      <div class="topbar__crumb">
+        <span class="topbar__crumb-top">MIOMS</span>
+        <h1 class="topbar__crumb-title">Notifications</h1>
+      </div>
+      <label class="topbar__search">
+        <svg><use href="#ic-search"/></svg>
+        <input type="text" placeholder="Search projects, indicators, beneficiaries, documents, evidence…">
+      </label>
+      <div class="topbar__actions">
+        <a class="iconbtn" href="reports-analytics.html" aria-label="Recent activity"><svg><use href="#ic-clock"/></svg></a>
+        <a class="iconbtn" href="knowledge-centre.html" aria-label="Help"><svg><use href="#ic-help"/></svg></a>
+        <a class="iconbtn" href="notifications.html" aria-label="Notifications"><svg><use href="#ic-bell"/></svg><span class="iconbtn__dot"></span></a>
+        <div class="topbar__divider"></div>
+        <a class="profile" href="workspace.html">
+          <span class="profile__avatar">FR</span>
+          <span class="profile__meta">
+            <span class="profile__name">Fadl · GAYO User</span>
+            <span class="profile__role">Executive Management</span>
+          </span>
+        </a>
+      </div>
+    </header>
+
+    <main class="content">
+
+
+<section class="page-header">
+  <div>
+    <div class="page-header__title">Notifications</div>
+    <div class="page-header__sub">Everything that needs your attention across the portfolio, most recent first.</div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="status-toggle">
+    <button class="is-active">All <span class="count">7</span></button>
+    <button>Unread <span class="count">6</span></button>
+    <button>Mentions <span class="count">0</span></button>
+    <button>System <span class="count">2</span></button>
+  </div>
+  <div class="alert-grid">
+<a class="alert-card alert-card--critical" href="finance.html" style="text-decoration:none;">
+  <div class="alert-card__icon"><svg><use href="#ic-alert-triangle"/></svg></div>
+  <div><div class="alert-card__tag">10 min ago</div><div class="alert-card__text">3 projects have exceeded budget thresholds</div></div>
+  <span class="alert-card__cta">Open →</span>
+</a>
+<a class="alert-card alert-card--warning" href="activities.html" style="text-decoration:none;">
+  <div class="alert-card__icon"><svg><use href="#ic-check-square"/></svg></div>
+  <div><div class="alert-card__tag">1 hour ago</div><div class="alert-card__text">12 activities are overdue across the portfolio</div></div>
+  <span class="alert-card__cta">Open →</span>
+</a>
+<a class="alert-card alert-card--caution" href="merl.html" style="text-decoration:none;">
+  <div class="alert-card__icon"><svg><use href="#ic-target"/></svg></div>
+  <div><div class="alert-card__tag">3 hours ago</div><div class="alert-card__text">8 indicators require verification before the next reporting cycle</div></div>
+  <span class="alert-card__cta">Open →</span>
+</a>
+<a class="alert-card alert-card--info" href="reports-analytics.html" style="text-decoration:none;">
+  <div class="alert-card__icon"><svg><use href="#ic-bar-chart"/></svg></div>
+  <div><div class="alert-card__tag">5 hours ago</div><div class="alert-card__text">5 donor reports are due within 14 days</div></div>
+  <span class="alert-card__cta">Open →</span>
+</a>
+<a class="alert-card alert-card--info" href="evidence-repository.html" style="text-decoration:none;">
+  <div class="alert-card__icon"><svg><use href="#ic-upload"/></svg></div>
+  <div><div class="alert-card__tag">Yesterday</div><div class="alert-card__text">New evidence uploaded to Zero Waste Accra</div></div>
+  <span class="alert-card__cta">Open →</span>
+</a>
+<a class="alert-card alert-card--info" href="beneficiaries.html" style="text-decoration:none;">
+  <div class="alert-card__icon"><svg><use href="#ic-users"/></svg></div>
+  <div><div class="alert-card__tag">Yesterday</div><div class="alert-card__text">New beneficiary dataset imported for Kenya office</div></div>
+  <span class="alert-card__cta">Open →</span>
+</a>
+<a class="alert-card alert-card--caution" href="finance.html" style="text-decoration:none;">
+  <div class="alert-card__icon"><svg><use href="#ic-dollar"/></svg></div>
+  <div><div class="alert-card__tag">2 days ago</div><div class="alert-card__text">Climate Resilience Initiative is under-utilizing its Q3 budget</div></div>
+  <span class="alert-card__cta">Open →</span>
+</a>
+  </div>
+</section>
+
+
+      <footer class="statusbar">
+        <span class="statusbar__item"><span class="statusbar__dot"></span>Data Quality 94%</span>
+        <span class="statusbar__item"><span class="statusbar__dot statusbar__dot--live"></span>System Status: Operational</span>
+        <span class="statusbar__item"><svg style="width:13px;height:13px"><use href="#ic-clock"/></svg>Last synchronization 2 min ago</span>
+        <span class="statusbar__item">12 pending actions</span>
+        <span class="statusbar__item">5 reports awaiting approval</span>
+        <span class="statusbar__brand">MIOMS · GAYO Digital Operating System</span>
+      </footer>
+
+    </main>
+  </div>
+</div>
+
+<p style="text-align:center; font-size:11px; color:#7c877f; padding:0 20px 28px; max-width:1440px; margin:0 auto;">
+  MIOMS Prototype. All figures are illustrative demonstration data and do not represent GAYO's actual reported portfolio.
+</p>
+<script src="assets/vendor/chart.umd.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -111,27 +111,16 @@ button{ font-family: var(--font-body); cursor: pointer; }
 .sidebar__brand{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 12px;
-  padding: 22px 22px 18px;
+  padding: 24px 22px;
   border-bottom: 1px solid rgba(255,255,255,0.09);
 }
 
-.sidebar__brand-mark{ width: 38px; height: 38px; flex: none; }
-
-.sidebar__brand-text{ line-height: 1.15; }
-.sidebar__brand-name{
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.06em;
-  color: #fff;
-}
-.sidebar__brand-sub{
-  font-size: 10.5px;
-  color: rgba(234,241,236,0.6);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-top: 2px;
+.sidebar__logo{
+  width: 152px;
+  height: auto;
+  display: block;
 }
 
 .sidebar__nav{
@@ -227,11 +216,15 @@ button{ font-family: var(--font-body); cursor: pointer; }
 }
 .topbar__menu-btn svg{ width: 22px; height: 22px; }
 
-.topbar__crumb{ display: flex; flex-direction: column; gap: 1px; }
+.topbar__crumb{ display: flex; flex-direction: column; gap: 1px; min-width: 0; flex-shrink: 1; }
 .topbar__crumb-top{
   font-size: 11px; letter-spacing: 0.08em; color: var(--ink-45); text-transform: uppercase;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.topbar__crumb-title{ font-family: var(--font-display); font-size: 18px; font-weight: 600; }
+.topbar__crumb-title{
+  font-family: var(--font-display); font-size: 18px; font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
 
 .topbar__search{
   flex: 1;
@@ -698,11 +691,11 @@ table.data-table{ width: 100%; border-collapse: collapse; font-size: 13px; min-w
 .insight-card__text{ font-size: 12.5px; line-height: 1.55; color: rgba(255,255,255,0.88); margin-top: 8px; }
 
 .decision-actions{ display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; position: relative; z-index: 1; }
-.decision-actions button{
+.decision-actions a{
   border-radius: 9px; padding: 9px 16px; font-size: 12.5px; font-weight: 600; border: 1px solid rgba(255,255,255,0.24);
-  background: rgba(255,255,255,0.06); color: #fff;
+  background: rgba(255,255,255,0.06); color: #fff; display: inline-flex; align-items: center;
 }
-.decision-actions button.is-primary{ background: var(--gayo-lime); color: #06210a; border-color: var(--gayo-lime); }
+.decision-actions a.is-primary{ background: var(--gayo-lime); color: #06210a; border-color: var(--gayo-lime); }
 
 /* ---------- Quick actions ---------- */
 
@@ -797,13 +790,76 @@ table.data-table{ width: 100%; border-collapse: collapse; font-size: 13px; min-w
   .stat-grid{ grid-template-columns: repeat(2, 1fr); }
   .quick-actions{ grid-template-columns: 1fr; }
   .profile__meta{ display: none; }
+  .topbar__actions .iconbtn:nth-child(1),
+  .topbar__actions .iconbtn:nth-child(2){ display: none; }
+  .topbar{ gap: 12px; padding: 0 16px; }
 }
 
 @media print{
   .sidebar, .statusbar, .topbar__actions{ display: none; }
 }
 
-@media (prefers-reduced-motion: reduce){
-  *{ animation: none !important; transition: none !important; }
-  html{ scroll-behavior: auto; }
+
+/* ==========================================================================
+   Secondary-page components (shared across non-Executive-Overview pages)
+   ========================================================================== */
+
+.page-header{
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 20px 24px; flex-wrap: wrap;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  padding: 22px 26px; box-shadow: var(--shadow-card);
 }
+.page-header__title{ font-size: 24px; font-weight: 600; }
+.page-header__sub{ font-size: 13px; color: var(--ink-70); margin-top: 7px; max-width: 62ch; line-height: 1.55; }
+.page-header__actions{ display: flex; gap: 10px; flex-wrap: wrap; }
+
+.card-grid{ display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+
+.info-card{
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md);
+  padding: 18px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.info-card:hover{ transform: translateY(-2px); box-shadow: 0 16px 32px -14px rgba(10,30,20,0.18); }
+.info-card__icon{
+  width: 38px; height: 38px; border-radius: 10px; background: #e8f5ec; color: var(--gayo-green);
+  display: flex; align-items: center; justify-content: center; flex: none;
+}
+.info-card__icon svg{ width: 18px; height: 18px; }
+.info-card__title{ font-family: var(--font-display); font-size: 15px; font-weight: 600; }
+.info-card__desc{ font-size: 12.5px; color: var(--ink-70); line-height: 1.5; flex: 1; }
+.info-card__meta{ display: flex; gap: 14px; font-size: 11.5px; color: var(--ink-45); flex-wrap: wrap; }
+.info-card__meta b{ color: var(--gayo-ink); }
+.info-card__foot{ display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
+
+.chip{
+  display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.02em;
+}
+.chip--connected{ background: #e8f5ec; color: var(--gayo-green); }
+.chip--pending{ background: #fdf1e3; color: var(--status-warning); }
+.chip--off{ background: var(--canvas-deep); color: var(--ink-45); }
+
+.empty-note{
+  display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 10px;
+  background: var(--canvas); font-size: 12.5px; color: var(--ink-70); border: 1px dashed var(--line);
+}
+
+.breadcrumb-back{
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600;
+  color: var(--ink-70); margin-bottom: 2px;
+}
+.breadcrumb-back svg{ width: 14px; height: 14px; transform: rotate(180deg); }
+.breadcrumb-back:hover{ color: var(--gayo-green); }
+
+.avatar-chip{
+  width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--gayo-green), var(--gayo-lime));
+  color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 10.5px; font-weight: 700;
+  font-family: var(--font-display); flex: none;
+}
+
+@media (max-width: 860px){
+  .page-header{ padding: 18px 18px; }
+  .page-header__title{ font-size: 20px; }
+}
+

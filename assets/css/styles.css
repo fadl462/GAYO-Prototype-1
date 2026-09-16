@@ -337,9 +337,10 @@ button{ font-family: var(--font-body); cursor: pointer; }
 }
 .hero__eyebrow{
   font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gayo-mint);
-  display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; row-gap: 2px;
 }
-.hero__eyebrow-dot{ width: 6px; height: 6px; border-radius: 50%; background: var(--gayo-lime); }
+.hero__eyebrow-dot{ width: 6px; height: 6px; border-radius: 50%; background: var(--gayo-lime); flex: none; align-self: center; }
+.hero__eyebrow-time{ color: rgba(255,255,255,0.6); letter-spacing: 0.04em; }
 .hero h1{ font-size: 32px; font-weight: 600; color: #fff; line-height: 1.15; }
 .hero__lede{
   margin-top: 12px; font-size: 14.5px; line-height: 1.6;
@@ -782,6 +783,8 @@ table.data-table{ width: 100%; border-collapse: collapse; font-size: 13px; min-w
 
 @media (max-width: 860px){
   .app{ grid-template-columns: 1fr; }
+  .hero__eyebrow-sep{ display: none; }
+  .hero__eyebrow-time{ flex-basis: 100%; }
   .sidebar{
     position: fixed; left: 0; top: 0; width: 280px; transform: translateX(-100%);
     transition: transform 0.22s ease; box-shadow: var(--shadow-pop);
@@ -792,6 +795,7 @@ table.data-table{ width: 100%; border-collapse: collapse; font-size: 13px; min-w
   .topbar__menu-btn{ display: flex; }
   .topbar__search{ display: none; }
   .content{ padding: 18px 16px 40px; }
+  .statusbar{ position: static; }
   .kpi-grid{ grid-template-columns: repeat(2, 1fr); }
   .theme-grid{ grid-template-columns: 1fr; }
   .stat-grid{ grid-template-columns: repeat(2, 1fr); }

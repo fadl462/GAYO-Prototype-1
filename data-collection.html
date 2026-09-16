@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Data Collection | MIOMS · GAYO</title>
-<meta name="description" content="Field data collection forms and submission monitoring.">
+<meta name="description" content="Field data collection: form creation, submission monitoring, quality assurance and analytics.">
 <link rel="icon" href="assets/img/brandmark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="assets/css/styles.css">
@@ -49,6 +49,14 @@
   <symbol id="ic-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
   <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 11l4 4 4-4"/><path d="M4.5 16.5v3a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-3"/></symbol>
   <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 19 6.5v5.5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6.5L12 3.5Z"/><path d="M9 12l2 2 4-4.5"/></symbol>
+  <symbol id="ic-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6.5h14M12 6.5v11"/></symbol>
+  <symbol id="ic-hash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3.5 7 20.5M17 3.5l-2.5 17M4 8.5h16M3.3 15.5h16"/></symbol>
+  <symbol id="ic-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="5" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="5" cy="17.5" r="1.3" fill="currentColor" stroke="none"/><path d="M9.5 6.5h10M9.5 12h10M9.5 17.5h10"/></symbol>
+  <symbol id="ic-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17.5 9 12l3.5 3.5L16 12l4.5 5"/></symbol>
+  <symbol id="ic-signature" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17c2-4 3-8 4.5-8s.8 6 2.6 6 2-7 4-7 1 5.5 3 5.5 1.5-2 3-2"/><path d="M4 20.5h16"/></symbol>
+  <symbol id="ic-calc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8 7.5h8"/><circle cx="8.3" cy="12" r="0.9" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="0.9" fill="currentColor" stroke="none"/><circle cx="15.7" cy="12" r="0.9" fill="currentColor" stroke="none"/><circle cx="8.3" cy="15.7" r="0.9" fill="currentColor" stroke="none"/><circle cx="12" cy="15.7" r="0.9" fill="currentColor" stroke="none"/><circle cx="15.7" cy="15.7" r="0.9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-grip" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="9" cy="6" r="1.4"/><circle cx="15" cy="6" r="1.4"/><circle cx="9" cy="12" r="1.4"/><circle cx="15" cy="12" r="1.4"/><circle cx="9" cy="18" r="1.4"/><circle cx="15" cy="18" r="1.4"/></symbol>
+  <symbol id="ic-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 7h15M9.5 7V5a1.5 1.5 0 0 1 1.5-1.5h2A1.5 1.5 0 0 1 14.5 5v2"/><path d="M6.5 7l1 12.5a2 2 0 0 0 2 1.8h5a2 2 0 0 0 2-1.8L17.5 7"/><path d="M10 11v6M14 11v6"/></symbol>
 </svg>
 
 <div class="app">
@@ -133,26 +141,43 @@
 <section class="page-header">
   <div>
     <div class="page-header__title">Data Collection</div>
-    <div class="page-header__sub">Manage field forms and monitor incoming submissions from project teams and enumerators.</div>
+    <div class="page-header__sub">Build forms, monitor incoming submissions, resolve data quality issues and track field performance — all in one place.</div>
   </div>
   <div class="page-header__actions">
-    <a class="btn btn--primary" href="merl.html"><svg><use href="#ic-form"/></svg>Create Form</a>
+    <a class="btn btn--ghost" href="merl.html"><svg><use href="#ic-target"/></svg>MERL Indicators</a>
+    <a class="btn btn--primary" href="#" id="createFormBtn"><svg><use href="#ic-form"/></svg>Create Form</a>
   </div>
 </section>
 
-<section class="kpi-grid" style="grid-template-columns:repeat(4,1fr);">
-  <div class="kpi-card"><div class="kpi-card__label">Active Forms</div><div class="kpi-card__value">42</div><div class="kpi-card__desc">Currently deployed</div></div>
-  <div class="kpi-card" data-accent="lime"><div class="kpi-card__label">Submissions</div><div class="kpi-card__value">3,490</div><div class="kpi-card__desc">This month</div></div>
-  <div class="kpi-card"><div class="kpi-card__label">Pending Review</div><div class="kpi-card__value">204</div><div class="kpi-card__desc">Awaiting validation</div></div>
-  <div class="kpi-card" data-accent="navy"><div class="kpi-card__label">Data Quality Flags</div><div class="kpi-card__value">17</div><div class="kpi-card__desc">Needs correction</div></div>
-</section>
+<nav class="view-tabs" aria-label="Data Collection views">
+  <button class="is-active" data-view="forms"><svg><use href="#ic-clipboard"/></svg>Forms</button>
+  <button data-view="submissions"><svg><use href="#ic-upload"/></svg>Submissions</button>
+  <button data-view="qa"><svg><use href="#ic-shield"/></svg>Quality Assurance</button>
+  <button data-view="analytics"><svg><use href="#ic-bar-chart"/></svg>Analytics</button>
+  <button data-view="builder"><svg><use href="#ic-plus"/></svg>Form Builder</button>
+</nav>
 
-<section class="panel">
-  <div class="panel__head"><div><div class="panel__title">Forms</div><div class="panel__subtitle">Click a form to open its project workspace</div></div></div>
-  <div class="table-wrap">
-    <table class="data-table">
-      <thead><tr><th>Form</th><th>Project</th><th>Submissions</th><th>Last Submission</th><th>Status</th></tr></thead>
-      <tbody>
+<!-- ================= FORMS ================= -->
+<div class="view-pane is-active" id="view-forms">
+  <section class="kpi-grid" style="grid-template-columns:repeat(4,1fr);">
+    <div class="kpi-card"><div class="kpi-card__label">Active Forms</div><div class="kpi-card__value">42</div><div class="kpi-card__desc">Currently deployed</div></div>
+    <div class="kpi-card" data-accent="lime"><div class="kpi-card__label">Submissions</div><div class="kpi-card__value">3,490</div><div class="kpi-card__desc">This month</div></div>
+    <div class="kpi-card"><div class="kpi-card__label">Pending Review</div><div class="kpi-card__value">204</div><div class="kpi-card__desc">Awaiting validation</div></div>
+    <div class="kpi-card" data-accent="navy"><div class="kpi-card__label">Data Quality Flags</div><div class="kpi-card__value">17</div><div class="kpi-card__desc">Needs correction</div></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Forms</div><div class="panel__subtitle">Click a form to open its project workspace</div></div></div>
+    <div class="status-toggle">
+      <button class="is-active">All <span class="count">42</span></button>
+      <button>Active <span class="count">36</span></button>
+      <button>Pending Review <span class="count">4</span></button>
+      <button>Closed <span class="count">2</span></button>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Form</th><th>Project</th><th>Submissions</th><th>Last Submission</th><th>Status</th></tr></thead>
+        <tbody>
 <tr onclick="location.href='project-workspace.html'">
   <td class="proj-name">Household Waste Segregation Survey</td><td>Zero Waste Accra</td><td>1,240</td><td>2 hours ago</td>
   <td><span class="pill pill--ontrack">Active</span></td>
@@ -177,10 +202,252 @@
   <td class="proj-name">Coastal Household Relocation Form</td><td>Kalahari Resilience Corridor</td><td>158</td><td>6 hours ago</td>
   <td><span class="pill pill--ontrack">Active</span></td>
 </tr>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<!-- ================= SUBMISSIONS / MONITORING ================= -->
+<div class="view-pane" id="view-submissions">
+  <section class="kpi-grid" style="grid-template-columns:repeat(4,1fr);">
+    <div class="kpi-card"><div class="kpi-card__label">Today</div><div class="kpi-card__value">116</div><div class="kpi-card__desc">Submissions received</div></div>
+    <div class="kpi-card" data-accent="lime"><div class="kpi-card__label">Avg / Day</div><div class="kpi-card__value">94</div><div class="kpi-card__desc">Last 30 days</div></div>
+    <div class="kpi-card"><div class="kpi-card__label">Active Enumerators</div><div class="kpi-card__value">58</div><div class="kpi-card__desc">Submitted this week</div></div>
+    <div class="kpi-card" data-accent="navy"><div class="kpi-card__label">Avg Completion Time</div><div class="kpi-card__value">6.4 min</div><div class="kpi-card__desc">Per submission</div></div>
+  </section>
+
+  <section class="grid-2">
+    <div class="panel">
+      <div class="panel__head"><div><div class="panel__title">Live Submission Feed</div><div class="panel__subtitle">Most recent first</div></div></div>
+      <div class="timeline">
+<div class="timeline-item">
+  <div class="timeline-dot" style="background:var(--gayo-mint); color:var(--gayo-green-deep);"><span class="avatar-chip" style="background:linear-gradient(135deg,var(--gayo-green),var(--gayo-lime));">AS</span></div>
+  <div style="flex:1; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+    <div>
+      <div class="timeline-time">4 min ago · Sub-district 3, Accra</div>
+      <div class="timeline-text"><b>Ama Serwaa</b> submitted <b>Household Waste Segregation Survey</b> — Zero Waste Accra</div>
+    </div>
+    <span class="pill pill--ontrack">Verified</span>
   </div>
-</section>
+</div>
+<div class="timeline-item">
+  <div class="timeline-dot" style="background:var(--gayo-mint); color:var(--gayo-green-deep);"><span class="avatar-chip" style="background:linear-gradient(135deg,var(--gayo-green),var(--gayo-lime));">JM</span></div>
+  <div style="flex:1; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+    <div>
+      <div class="timeline-time">22 min ago · Turkana County</div>
+      <div class="timeline-text"><b>Joseph Mwangi</b> submitted <b>Climate Vulnerability Assessment</b> — Climate Resilience Initiative</div>
+    </div>
+    <span class="pill pill--risk">Needs Review</span>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-dot" style="background:var(--gayo-mint); color:var(--gayo-green-deep);"><span class="avatar-chip" style="background:linear-gradient(135deg,var(--gayo-green),var(--gayo-lime));">KA</span></div>
+  <div style="flex:1; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+    <div>
+      <div class="timeline-time">38 min ago · Accra</div>
+      <div class="timeline-text"><b>Kwabena Asare</b> submitted <b>Apprentice Skills Checklist</b> — Youth Green Jobs</div>
+    </div>
+    <span class="pill pill--ontrack">Verified</span>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-dot" style="background:var(--gayo-mint); color:var(--gayo-green-deep);"><span class="avatar-chip" style="background:linear-gradient(135deg,var(--gayo-green),var(--gayo-lime));">FN</span></div>
+  <div style="flex:1; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+    <div>
+      <div class="timeline-time">1 hour ago · Dakar</div>
+      <div class="timeline-text"><b>Fatou Ndiaye</b> submitted <b>Vendor Registration Form</b> — Dakar Youth Apprenticeships</div>
+    </div>
+    <span class="pill pill--ontrack">Verified</span>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-dot" style="background:var(--gayo-mint); color:var(--gayo-green-deep);"><span class="avatar-chip" style="background:linear-gradient(135deg,var(--gayo-green),var(--gayo-lime));">CO</span></div>
+  <div style="flex:1; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+    <div>
+      <div class="timeline-time">2 hours ago · Lagos</div>
+      <div class="timeline-text"><b>Chidi Okafor</b> submitted <b>Worker Retraining Intake Form</b> — Just Transition Programme</div>
+    </div>
+    <span class="pill pill--delayed">Flagged</span>
+  </div>
+</div>
+<div class="timeline-item">
+  <div class="timeline-dot" style="background:var(--gayo-mint); color:var(--gayo-green-deep);"><span class="avatar-chip" style="background:linear-gradient(135deg,var(--gayo-green),var(--gayo-lime));">GN</span></div>
+  <div style="flex:1; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+    <div>
+      <div class="timeline-time">3 hours ago · Kampala Central</div>
+      <div class="timeline-text"><b>Grace Nakato</b> submitted <b>Recycling Market Vendor Registration</b> — Circular Markets Kampala</div>
+    </div>
+    <span class="pill pill--ontrack">Verified</span>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel__head"><div><div class="panel__title">Submission Funnel</div><div class="panel__subtitle">This month</div></div></div>
+      <div class="health-bars" style="margin-bottom: 0;">
+        <div><div class="health-row__top"><span>Submitted</span><b>3,490</b></div><div class="health-row__track"><div class="health-row__fill" style="width:100%; background:var(--gayo-navy)"></div></div></div>
+        <div><div class="health-row__top"><span>Auto-validated</span><b>3,140</b></div><div class="health-row__track"><div class="health-row__fill" style="width:90%; background:var(--gayo-green)"></div></div></div>
+        <div><div class="health-row__top"><span>Reviewed</span><b>2,860</b></div><div class="health-row__track"><div class="health-row__fill" style="width:82%; background:var(--gayo-green)"></div></div></div>
+        <div><div class="health-row__top"><span>Flagged for follow-up</span><b>204</b></div><div class="health-row__track"><div class="health-row__fill" style="width:6%; background:var(--status-warning)"></div></div></div>
+      </div>
+      <div class="finance-alerts">
+        <div class="finance-alert"><svg><use href="#ic-clock"/></svg>Median time from submission to review: <b>4.2 hours</b></div>
+        <div class="finance-alert"><svg><use href="#ic-pin"/></svg><b>58 enumerators</b> active across 6 countries this week</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= QUALITY ASSURANCE ================= -->
+<div class="view-pane" id="view-qa">
+  <section class="kpi-grid" style="grid-template-columns:repeat(4,1fr);">
+    <div class="kpi-card"><div class="kpi-card__label">Data Quality Score</div><div class="kpi-card__value">94%</div><div class="kpi-card__desc">Organization-wide</div></div>
+    <div class="kpi-card"><div class="kpi-card__label">Flagged Records</div><div class="kpi-card__value">17</div><div class="kpi-card__desc">Open issues</div></div>
+    <div class="kpi-card" data-accent="lime"><div class="kpi-card__label">Duplicate Entries</div><div class="kpi-card__value">4</div><div class="kpi-card__desc">Detected this month</div></div>
+    <div class="kpi-card" data-accent="navy"><div class="kpi-card__label">Validation Rules</div><div class="kpi-card__value">28</div><div class="kpi-card__desc">Active across all forms</div></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Quality Issues</div><div class="panel__subtitle">Flagged records requiring attention</div></div></div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Record</th><th>Form</th><th>Issue</th><th>Severity</th><th>Assigned To</th><th>Status</th></tr></thead>
+        <tbody>
+<tr onclick="location.href='merl.html'">
+  <td class="proj-name">SUB-88213</td><td>Climate Vulnerability Assessment</td><td>Missing GPS coordinates</td><td>High</td><td>Joseph Mwangi</td>
+  <td><span class="pill pill--risk">Open</span></td>
+</tr>
+<tr onclick="location.href='merl.html'">
+  <td class="proj-name">SUB-88190</td><td>Worker Retraining Intake Form</td><td>Duplicate entry suspected</td><td>High</td><td>Chidi Okafor</td>
+  <td><span class="pill pill--delayed">Escalated</span></td>
+</tr>
+<tr onclick="location.href='merl.html'">
+  <td class="proj-name">SUB-88144</td><td>Household Waste Segregation Survey</td><td>Out-of-range value (household size)</td><td>Medium</td><td>Ama Serwaa</td>
+  <td><span class="pill pill--risk">Open</span></td>
+</tr>
+<tr onclick="location.href='merl.html'">
+  <td class="proj-name">SUB-88102</td><td>Apprentice Skills Checklist</td><td>Photo evidence missing</td><td>Low</td><td>Kwabena Asare</td>
+  <td><span class="pill pill--ontrack">Resolved</span></td>
+</tr>
+<tr onclick="location.href='merl.html'">
+  <td class="proj-name">SUB-88061</td><td>Vendor Registration Form</td><td>Inconsistent date entry</td><td>Medium</td><td>Fatou Ndiaye</td>
+  <td><span class="pill pill--ontrack">Resolved</span></td>
+</tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Validation Rules</div><div class="panel__subtitle">Applied automatically as submissions arrive</div></div></div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="qa-rule"><div class="qa-rule__body"><div class="qa-rule__title">Required field enforcement</div><div class="qa-rule__desc">Blocks submission until all required fields are completed</div></div><button class="switch is-on"></button></div>
+      <div class="qa-rule"><div class="qa-rule__body"><div class="qa-rule__title">GPS location required</div><div class="qa-rule__desc">Flags submissions missing a valid GPS coordinate</div></div><button class="switch is-on"></button></div>
+      <div class="qa-rule"><div class="qa-rule__body"><div class="qa-rule__title">Range checks on numeric fields</div><div class="qa-rule__desc">Flags values outside expected household/demographic ranges</div></div><button class="switch is-on"></button></div>
+      <div class="qa-rule"><div class="qa-rule__body"><div class="qa-rule__title">Duplicate detection</div><div class="qa-rule__desc">Compares enumerator, location and timestamp to catch duplicate entries</div></div><button class="switch is-on"></button></div>
+      <div class="qa-rule"><div class="qa-rule__body"><div class="qa-rule__title">Photo evidence required</div><div class="qa-rule__desc">Requires at least one photo for site-visit forms</div></div><button class="switch"></button></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= ANALYTICS ================= -->
+<div class="view-pane" id="view-analytics">
+  <section class="kpi-grid" style="grid-template-columns:repeat(4,1fr);">
+    <div class="kpi-card"><div class="kpi-card__label">Response Rate</div><div class="kpi-card__value">96%</div><div class="kpi-card__desc">Of assigned submissions completed</div></div>
+    <div class="kpi-card" data-accent="lime"><div class="kpi-card__label">Avg Completion Time</div><div class="kpi-card__value">6.4 min</div><div class="kpi-card__desc">Per submission</div></div>
+    <div class="kpi-card"><div class="kpi-card__label">Data Completeness</div><div class="kpi-card__value">82%</div><div class="kpi-card__desc">Fully complete submissions</div></div>
+    <div class="kpi-card" data-accent="navy"><div class="kpi-card__label">Top Enumerator</div><div class="kpi-card__value">Ama S.</div><div class="kpi-card__desc">142 submissions this month</div></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Submissions Trend</div><div class="panel__subtitle">Last 9 months, organization-wide</div></div></div>
+    <div style="height:260px;"><canvas id="submissionsTrendChart"></canvas></div>
+  </section>
+
+  <section class="grid-2">
+    <div class="panel">
+      <div class="panel__head"><div><div class="panel__title">Submissions by Form</div></div></div>
+      <div style="height:240px;"><canvas id="submissionsByFormChart"></canvas></div>
+    </div>
+    <div class="panel">
+      <div class="panel__head"><div><div class="panel__title">Data Completeness</div></div></div>
+      <div style="height:200px;"><canvas id="dataCompletenessChart"></canvas></div>
+      <div class="legend-row" style="justify-content:center;">
+        <span><span class="legend-dot" style="background:#008037"></span>Complete</span>
+        <span><span class="legend-dot" style="background:#a7d13d"></span>Partial</span>
+        <span><span class="legend-dot" style="background:#e08a2c"></span>Flagged</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Enumerator Leaderboard</div><div class="panel__subtitle">By submissions this month</div></div></div>
+    <div>
+      <div class="leaderboard-row"><span class="leaderboard-rank">1</span><span class="leaderboard-name">Ama Serwaa</span><span class="leaderboard-meta">Zero Waste Accra</span><span class="leaderboard-value">142</span></div>
+      <div class="leaderboard-row"><span class="leaderboard-rank">2</span><span class="leaderboard-name">Grace Nakato</span><span class="leaderboard-meta">Circular Markets Kampala</span><span class="leaderboard-value">118</span></div>
+      <div class="leaderboard-row"><span class="leaderboard-rank">3</span><span class="leaderboard-name">Kwabena Asare</span><span class="leaderboard-meta">Youth Green Jobs</span><span class="leaderboard-value">104</span></div>
+      <div class="leaderboard-row"><span class="leaderboard-rank">4</span><span class="leaderboard-name">Fatou Ndiaye</span><span class="leaderboard-meta">Dakar Youth Apprenticeships</span><span class="leaderboard-value">96</span></div>
+      <div class="leaderboard-row"><span class="leaderboard-rank">5</span><span class="leaderboard-name">Joseph Mwangi</span><span class="leaderboard-meta">Climate Resilience Initiative</span><span class="leaderboard-value">81</span></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= FORM BUILDER ================= -->
+<div class="view-pane" id="view-builder">
+  <section class="builder-grid">
+    <div class="panel" style="padding:16px;">
+      <div class="palette-group-label">Basic fields</div>
+      <button class="field-palette-btn" data-type="text"><svg><use href="#ic-text"/></svg>Text</button>
+      <button class="field-palette-btn" data-type="number"><svg><use href="#ic-hash"/></svg>Number</button>
+      <button class="field-palette-btn" data-type="date"><svg><use href="#ic-calendar"/></svg>Date</button>
+      <button class="field-palette-btn" data-type="note"><svg><use href="#ic-file"/></svg>Note / Instructions</button>
+      <div class="palette-group-label">Choice fields</div>
+      <button class="field-palette-btn" data-type="choice"><svg><use href="#ic-check-square"/></svg>Single Choice</button>
+      <button class="field-palette-btn" data-type="multichoice"><svg><use href="#ic-list"/></svg>Multiple Choice</button>
+      <div class="palette-group-label">Field &amp; media</div>
+      <button class="field-palette-btn" data-type="location"><svg><use href="#ic-pin"/></svg>GPS Location</button>
+      <button class="field-palette-btn" data-type="photo"><svg><use href="#ic-image"/></svg>Photo / Media</button>
+      <button class="field-palette-btn" data-type="signature"><svg><use href="#ic-signature"/></svg>Signature</button>
+      <button class="field-palette-btn" data-type="calc"><svg><use href="#ic-calc"/></svg>Calculation</button>
+    </div>
+
+    <div class="builder-canvas">
+      <div class="builder-settings-row">
+        <div>
+          <label class="builder-label">Form name</label>
+          <input class="builder-input" value="Untitled Field Form">
+        </div>
+        <div>
+          <label class="builder-label">Assigned Project</label>
+          <select class="builder-input">
+            <option>Zero Waste Accra</option>
+            <option>Climate Resilience Initiative</option>
+            <option>Youth Green Jobs</option>
+            <option>Just Transition Programme</option>
+            <option>Circular Markets Kampala</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-bottom:20px;">
+        <label class="builder-label">Description</label>
+        <input class="builder-input" value="Field data collection form">
+      </div>
+
+      <div class="panel__head" style="margin-bottom:12px;">
+        <div><div class="panel__title" style="font-size:14px;">Fields</div><div class="panel__subtitle">Click a field type on the left to add it to this form</div></div>
+      </div>
+      <div class="builder-fieldlist" id="fieldList"></div>
+      <div class="builder-empty" id="builderEmpty" style="display:none;">No fields yet — choose a field type from the left to get started.</div>
+
+      <div class="builder-footer">
+        <button class="btn btn--ghost" id="resetBuilder" type="button">Clear All</button>
+        <button class="btn btn--ghost" type="button">Save Draft</button>
+        <button class="btn btn--primary" id="publishFormBtn" type="button"><svg><use href="#ic-upload"/></svg>Publish Form</button>
+      </div>
+    </div>
+  </section>
+</div>
 
 
       <footer class="statusbar">
@@ -201,6 +468,6 @@
 </p>
 <script src="assets/vendor/chart.umd.min.js"></script>
 <script src="assets/js/app.js"></script>
-
+<script src="assets/js/data-collection.js"></script>
 </body>
 </html>

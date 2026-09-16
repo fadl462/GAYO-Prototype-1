@@ -884,3 +884,123 @@ table.data-table{ width: 100%; border-collapse: collapse; font-size: 13px; min-w
   .page-header__title{ font-size: 20px; }
 }
 
+
+/* ==========================================================================
+   Data Collection — view tabs, form builder, quality assurance, analytics
+   ========================================================================== */
+
+.view-tabs{
+  display: flex; gap: 6px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius-md); padding: 6px; box-shadow: var(--shadow-card);
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+.view-tabs button{
+  flex: 1; white-space: nowrap; border: none; background: none; padding: 10px 16px; border-radius: 9px;
+  font-size: 13px; font-weight: 600; color: var(--ink-70); display: inline-flex; align-items: center;
+  justify-content: center; gap: 7px; transition: background 0.15s ease, color 0.15s ease;
+}
+.view-tabs button svg{ width: 15px; height: 15px; }
+.view-tabs button:hover{ background: var(--canvas); }
+.view-tabs button.is-active{ background: var(--gayo-green); color: #fff; }
+
+.view-pane{ display: none; flex-direction: column; gap: 22px; }
+.view-pane.is-active{ display: flex; }
+
+/* ---------- Form builder ---------- */
+
+.builder-grid{ display: grid; grid-template-columns: 220px 1fr; gap: 18px; align-items: start; }
+
+.palette-group-label{
+  font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-45);
+  padding: 12px 4px 6px;
+}
+.palette-group-label:first-child{ padding-top: 2px; }
+.field-palette-btn{
+  width: 100%; display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 9px;
+  border: 1px solid transparent; background: none; font-size: 12.5px; font-weight: 600; color: var(--ink-70);
+  text-align: left; margin-bottom: 2px;
+}
+.field-palette-btn:hover{ background: var(--canvas); border-color: var(--line); }
+.field-palette-btn svg{ width: 16px; height: 16px; color: var(--gayo-green); flex: none; }
+
+.builder-canvas{ background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-card); }
+.builder-settings-row{ display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px; margin-bottom: 20px; }
+.builder-input{
+  width: 100%; border: 1px solid var(--line); border-radius: 9px; padding: 10px 12px; font-size: 13px;
+  font-family: var(--font-body); color: var(--gayo-ink); background: var(--canvas);
+}
+.builder-input:focus{ outline: none; border-color: var(--gayo-green); background: var(--surface); }
+.builder-label{ font-size: 11px; font-weight: 600; color: var(--ink-45); text-transform: uppercase; letter-spacing: 0.03em; display: block; margin-bottom: 6px; }
+
+.builder-fieldlist{ display: flex; flex-direction: column; gap: 10px; min-height: 120px; }
+.field-card{
+  border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: var(--canvas);
+  display: flex; align-items: center; gap: 12px;
+}
+.field-card__handle{ color: var(--ink-45); flex: none; cursor: grab; }
+.field-card__handle svg{ width: 14px; height: 14px; }
+.field-card__body{ flex: 1; min-width: 0; }
+.field-card__type{
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--gayo-green); margin-bottom: 4px; display: block;
+}
+.field-card__label-input{
+  width: 100%; border: none; background: none; font-size: 13.5px; font-weight: 600; color: var(--gayo-ink);
+  padding: 2px 0; border-bottom: 1px dashed transparent;
+}
+.field-card__label-input:focus{ outline: none; border-bottom-color: var(--gayo-green); }
+.field-card__actions{ display: flex; align-items: center; gap: 10px; flex: none; }
+
+.switch{
+  width: 34px; height: 19px; border-radius: 999px; background: var(--line); position: relative;
+  border: none; flex: none; cursor: pointer; transition: background 0.15s ease;
+}
+.switch::after{
+  content: ""; width: 15px; height: 15px; background: #fff; border-radius: 50%; position: absolute;
+  top: 2px; left: 2px; transition: left 0.15s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+.switch.is-on{ background: var(--gayo-green); }
+.switch.is-on::after{ left: 17px; }
+.switch-label{ font-size: 11px; color: var(--ink-45); white-space: nowrap; }
+
+.field-remove{
+  border: none; background: none; color: var(--ink-45); width: 26px; height: 26px; border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+}
+.field-remove:hover{ background: #fbeae8; color: var(--status-critical); }
+.field-remove svg{ width: 14px; height: 14px; }
+
+.builder-empty{
+  border: 1.5px dashed var(--line); border-radius: 10px; padding: 32px 20px; text-align: center;
+  color: var(--ink-45); font-size: 12.5px;
+}
+
+.builder-footer{ display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+
+/* ---------- Quality assurance ---------- */
+
+.qa-rule{
+  display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 10px; background: var(--canvas);
+}
+.qa-rule__body{ flex: 1; min-width: 0; }
+.qa-rule__title{ font-size: 12.5px; font-weight: 600; }
+.qa-rule__desc{ font-size: 11.5px; color: var(--ink-45); margin-top: 2px; }
+
+/* ---------- Analytics ---------- */
+
+.leaderboard-row{ display: flex; align-items: center; gap: 12px; padding: 10px 4px; }
+.leaderboard-rank{
+  width: 22px; height: 22px; border-radius: 50%; background: var(--canvas-deep); color: var(--ink-70);
+  font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none;
+}
+.leaderboard-row:nth-child(1) .leaderboard-rank{ background: var(--gayo-lime); color: #06210a; }
+.leaderboard-row:nth-child(2) .leaderboard-rank{ background: #d7e6dc; }
+.leaderboard-name{ flex: 1; font-size: 12.5px; font-weight: 600; }
+.leaderboard-meta{ font-size: 11px; color: var(--ink-45); }
+.leaderboard-value{ font-size: 13px; font-weight: 700; color: var(--gayo-green); }
+
+@media (max-width: 860px){
+  .builder-grid{ grid-template-columns: 1fr; }
+  .builder-settings-row{ grid-template-columns: 1fr; }
+  .view-tabs button{ flex: none; }
+}

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIOMS — Executive Overview | GAYO</title>
+<meta name="description" content="MIOMS — GAYO's MERL Integrated Organizational Management System. Prototype 01: Executive Overview.">
+<link rel="icon" href="assets/img/brandmark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- ============================================================ SVG ICON SPRITE ============================================================ -->
+<svg style="display:none">
+  <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-6h4v6"/></symbol>
+  <symbol id="ic-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.2"/></symbol>
+  <symbol id="ic-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8.5 12 14l9-5.5L12 3Z"/><path d="M3 14.5 12 20l9-5.5"/><path d="M3 11.5 12 17l9-5.5"/></symbol>
+  <symbol id="ic-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5a1.5 1.5 0 0 1 1.5-1.5h4l2 2.2h7A1.5 1.5 0 0 1 20 8.7v9.3a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18V6.5Z"/></symbol>
+  <symbol id="ic-check-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M8 12.2 10.8 15 16 9"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4.2"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></symbol>
+  <symbol id="ic-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="16" rx="2"/><rect x="9" y="3" width="6" height="3" rx="1"/><path d="M8.5 11h7M8.5 15h7"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9.5" r="2.4"/><path d="M15.7 14.6c2.4.4 4 2.1 4 4.9"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></symbol>
+  <symbol id="ic-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M16.5 7.2c-.8-1-2.3-1.7-4-1.7-2.3 0-4.2 1.3-4.2 3s1.9 2.6 4.2 3 4.2 1.3 4.2 3-1.9 3-4.2 3c-1.9 0-3.5-.8-4.2-2"/></symbol>
+  <symbol id="ic-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="9" height="17" rx="1"/><path d="M14 9h5v11.5h-5"/><path d="M8 7.5h2M8 11h2M8 14.5h2"/></symbol>
+  <symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M4 12h16M12 3.8c2.4 2.2 3.6 5.2 3.6 8.2s-1.2 6-3.6 8.2c-2.4-2.2-3.6-5.2-3.6-8.2S9.6 6 12 3.8Z"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h7l4 4v12.5a1 1 0 0 1-1 1h-10a1 1 0 0 1-1-1v-15.5a1 1 0 0 1 1-1Z"/><path d="M13.2 3.6V8h4.2"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.2c2-1 5-1 8 .6 3-1.6 6-1.6 8-.6v14c-2-1-5-1-8 .6-3-1.6-6-1.6-8-.6Z"/><path d="M12 5.8v14"/></symbol>
+  <symbol id="ic-archive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="4.2" rx="1"/><path d="M4.7 8.2v10a1.3 1.3 0 0 0 1.3 1.3h12a1.3 1.3 0 0 0 1.3-1.3v-10"/><path d="M10 12.2h4"/></symbol>
+  <symbol id="ic-bar-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V10M12 20V4M19 20v-7"/><path d="M3 20.3h18"/></symbol>
+  <symbol id="ic-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10.5a6 6 0 0 1 12 0c0 4 1.4 5.4 1.4 5.4H4.6S6 14.5 6 10.5Z"/><path d="M10 19a2.2 2.2 0 0 0 4 0"/></symbol>
+  <symbol id="ic-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5 14.5 9.5"/><path d="M11 7.2l1.4-1.4a3.6 3.6 0 1 1 5 5L16 12.2"/><path d="M13 16.8l-1.4 1.4a3.6 3.6 0 1 1-5-5l1.4-1.4"/></symbol>
+  <symbol id="ic-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.3 12a7.3 7.3 0 0 0-.12-1.32l2-1.55-2-3.46-2.36.95a7.4 7.4 0 0 0-2.28-1.32l-.36-2.5h-4l-.36 2.5a7.4 7.4 0 0 0-2.28 1.32l-2.36-.95-2 3.46 2 1.55a7.5 7.5 0 0 0 0 2.64l-2 1.55 2 3.46 2.36-.95c.68.57 1.45 1.02 2.28 1.32l.36 2.5h4l.36-2.5a7.4 7.4 0 0 0 2.28-1.32l2.36.95 2-3.46-2-1.55c.08-.43.12-.87.12-1.32Z"/></symbol>
+  <symbol id="ic-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="ic-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.2"/><path d="M9.5 9.3a2.6 2.6 0 1 1 3.7 2.3c-.9.5-1.2 1-1.2 2"/><circle cx="12" cy="16.3" r="0.6" fill="currentColor"/></symbol>
+  <symbol id="ic-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="ic-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="ic-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.5" width="16" height="15" rx="2"/><path d="M4 9.5h16M8 3.5v4M16 3.5v4"/></symbol>
+  <symbol id="ic-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.6 9l5.4 1.6L13.6 12l-1.6 5.5L10.4 12 5 10.6 10.4 9Z"/><path d="M19 16.5l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7Z"/></symbol>
+  <symbol id="ic-alert-triangle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 21 19.5H3Z"/><path d="M12 10v4.4"/><circle cx="12" cy="17" r="0.6" fill="currentColor"/></symbol>
+  <symbol id="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15.5V4M8 8l4-4 4 4"/><path d="M4.5 15.5v3a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-3"/></symbol>
+  <symbol id="ic-file-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h7l4 4v12.5a1 1 0 0 1-1 1h-10a1 1 0 0 1-1-1v-15.5a1 1 0 0 1 1-1Z"/><path d="M12 12v5M9.5 14.5h5"/></symbol>
+  <symbol id="ic-user-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19.5c0-3 2.5-5.2 5.5-5.2s5.5 2.2 5.5 5.2"/><path d="M18 8v5M15.5 10.5h5"/></symbol>
+  <symbol id="ic-form" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="15" height="17" rx="1.5"/><path d="M8 8.5h8M8 12h8M8 15.5h5"/></symbol>
+</svg>
+
+<div class="app">
+
+  <!-- ============================================================ SIDEBAR ============================================================ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__brand">
+      <img class="sidebar__brand-mark" src="assets/img/brandmark-white.svg" alt="">
+      <div class="sidebar__brand-text">
+        <div class="sidebar__brand-name">MIOMS</div>
+        <div class="sidebar__brand-sub">MERL Integrated Org. System</div>
+      </div>
+      <button class="sidebar__close" id="sidebarClose" aria-label="Close menu"><svg><use href="#ic-x"/></svg></button>
+    </div>
+
+    <nav class="sidebar__nav" aria-label="Primary">
+      <div class="sidebar__group-label">Overview</div>
+      <a class="navlink is-active" href="#top"><svg><use href="#ic-home"/></svg>Executive Overview</a>
+      <a class="navlink" href="#"><svg><use href="#ic-grid"/></svg>My Workspace</a>
+
+      <div class="sidebar__group-label">Programme</div>
+      <a class="navlink" href="#thematic"><svg><use href="#ic-layers"/></svg>Thematic Areas</a>
+      <a class="navlink" href="#portfolio"><svg><use href="#ic-folder"/></svg>Projects</a>
+      <a class="navlink" href="#"><svg><use href="#ic-check-square"/></svg>Activities</a>
+      <a class="navlink" href="#merl"><svg><use href="#ic-target"/></svg>MERL</a>
+      <a class="navlink" href="#"><svg><use href="#ic-clipboard"/></svg>Data Collection</a>
+      <a class="navlink" href="#beneficiaries"><svg><use href="#ic-users"/></svg>Beneficiaries</a>
+      <a class="navlink" href="#geo"><svg><use href="#ic-pin"/></svg>GIS &amp; Locations</a>
+
+      <div class="sidebar__group-label">Organization</div>
+      <a class="navlink" href="#finance"><svg><use href="#ic-dollar"/></svg>Finance</a>
+      <a class="navlink" href="#"><svg><use href="#ic-building"/></svg>Departments</a>
+      <a class="navlink" href="#"><svg><use href="#ic-globe"/></svg>Country Offices</a>
+
+      <div class="sidebar__group-label">Knowledge</div>
+      <a class="navlink" href="#"><svg><use href="#ic-file"/></svg>Documents</a>
+      <a class="navlink" href="#"><svg><use href="#ic-book"/></svg>Knowledge Centre</a>
+      <a class="navlink" href="#"><svg><use href="#ic-archive"/></svg>Evidence Repository</a>
+      <a class="navlink" href="#"><svg><use href="#ic-bar-chart"/></svg>Reports &amp; Analytics</a>
+
+      <div class="sidebar__group-label">System</div>
+      <a class="navlink" href="#"><svg><use href="#ic-bell"/></svg>Notifications<span class="navlink__badge">6</span></a>
+      <a class="navlink" href="#"><svg><use href="#ic-link"/></svg>Integrations</a>
+      <a class="navlink" href="#"><svg><use href="#ic-settings"/></svg>Administration</a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <img class="sidebar__footer-mark" src="assets/img/brandmark-white.svg" alt="">
+      <div class="sidebar__footer-text"><b>GAYO</b>Green Africa Youth Organization</div>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ============================================================ MAIN ============================================================ -->
+  <div class="main" id="top">
+
+    <header class="topbar">
+      <button class="topbar__menu-btn" id="menuBtn" aria-label="Open menu"><svg><use href="#ic-menu"/></svg></button>
+      <div class="topbar__crumb">
+        <span class="topbar__crumb-top">MIOMS</span>
+        <h1 class="topbar__crumb-title">Executive Overview</h1>
+      </div>
+      <label class="topbar__search">
+        <svg><use href="#ic-search"/></svg>
+        <input type="text" placeholder="Search projects, indicators, beneficiaries, documents, evidence…">
+      </label>
+      <div class="topbar__actions">
+        <button class="iconbtn" aria-label="Recent activity"><svg><use href="#ic-clock"/></svg></button>
+        <button class="iconbtn" aria-label="Help"><svg><use href="#ic-help"/></svg></button>
+        <button class="iconbtn" aria-label="Notifications"><svg><use href="#ic-bell"/></svg><span class="iconbtn__dot"></span></button>
+        <div class="topbar__divider"></div>
+        <button class="profile">
+          <span class="profile__avatar">FR</span>
+          <span class="profile__meta">
+            <span class="profile__name">Fadl · GAYO User</span>
+            <span class="profile__role">Executive Management</span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ============================================================ HERO ============================================================ -->
+      <section class="hero">
+        <div>
+          <div class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>Organization-wide performance overview</div>
+          <h1>Good morning, GAYO.</h1>
+          <p class="hero__lede">Monitor your portfolio, programmes, resources, results and organizational performance from one integrated workspace.</p>
+        </div>
+        <div class="hero__meta">
+          <div class="hero__meta-card"><div class="hero__meta-num">15+</div><div class="hero__meta-label">Countries</div></div>
+          <div class="hero__meta-card"><div class="hero__meta-num">4</div><div class="hero__meta-label">Thematic Areas</div></div>
+          <div class="hero__meta-card"><div class="hero__meta-num">245</div><div class="hero__meta-label">Projects</div></div>
+          <div class="hero__meta-card"><div class="hero__meta-num">1.2M+</div><div class="hero__meta-label">Beneficiaries</div></div>
+        </div>
+      </section>
+
+      <!-- ============================================================ FILTER BAR ============================================================ -->
+      <section class="filterbar" aria-label="Dashboard filters">
+        <div class="filterbar__group">
+          <label class="field"><svg><use href="#ic-calendar"/></svg><select><option>2026</option><option>2025</option><option>2024</option></select></label>
+          <label class="field"><svg><use href="#ic-folder"/></svg><select><option>All Projects</option><option>Active only</option><option>At risk</option></select></label>
+          <label class="field"><svg><use href="#ic-globe"/></svg><select><option>All Countries</option><option>Ghana</option><option>Kenya</option><option>Nigeria</option><option>Uganda</option><option>Botswana</option></select></label>
+          <label class="field"><svg><use href="#ic-layers"/></svg><select><option>All Themes</option><option>Zero Waste Cities</option><option>Adaptation &amp; Resilience</option><option>Just Transition</option><option>Green Jobs for Youth</option></select></label>
+          <label class="field"><svg><use href="#ic-building"/></svg><select><option>Department</option><option>MERL</option><option>Finance</option><option>Programmes</option></select></label>
+          <label class="field"><svg><use href="#ic-target"/></svg><select><option>Status</option><option>On track</option><option>At risk</option><option>Delayed</option></select></label>
+          <label class="field"><svg><use href="#ic-dollar"/></svg><select><option>Funding Partner</option><option>EU</option><option>UNEP</option><option>Foundations</option></select></label>
+        </div>
+        <div class="filterbar__actions">
+          <button class="btn btn--ghost" id="resetFilters">Reset</button>
+          <button class="btn btn--primary" id="applyFilters"><svg><use href="#ic-check-square"/></svg>Apply Filters</button>
+        </div>
+      </section>
+
+      <!-- ============================================================ KPI STRIP ============================================================ -->
+      <section aria-label="Organizational KPIs">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-card__label">Portfolio</div>
+            <div class="kpi-card__value">245</div>
+            <div class="kpi-card__desc">Total projects</div>
+            <div class="kpi-card__delta kpi-card__delta--up"><svg><use href="#ic-arrow-up"/></svg>+12 this year</div>
+          </div>
+          <div class="kpi-card" data-accent="lime">
+            <div class="kpi-card__label">Active Projects</div>
+            <div class="kpi-card__value">189</div>
+            <div class="kpi-card__desc">Currently implementing</div>
+            <div class="kpi-card__delta kpi-card__delta--flat">77% of portfolio</div>
+          </div>
+          <div class="kpi-card" data-accent="navy">
+            <div class="kpi-card__label">Funding Portfolio</div>
+            <div class="kpi-card__value">$12.5M</div>
+            <div class="kpi-card__desc">Active funding</div>
+            <div class="kpi-card__delta kpi-card__delta--up"><svg><use href="#ic-arrow-up"/></svg>+8.4% YoY</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card__label">Beneficiaries</div>
+            <div class="kpi-card__value">1.2M+</div>
+            <div class="kpi-card__desc">People reached</div>
+            <div class="kpi-card__delta kpi-card__delta--up"><svg><use href="#ic-arrow-up"/></svg>+15.3%</div>
+          </div>
+          <div class="kpi-card" data-accent="lime">
+            <div class="kpi-card__label">Indicators</div>
+            <div class="kpi-card__value">85%</div>
+            <div class="kpi-card__desc">On track</div>
+            <div class="kpi-card__delta kpi-card__delta--up"><svg><use href="#ic-arrow-up"/></svg>+6.2%</div>
+          </div>
+          <div class="kpi-card" data-accent="navy">
+            <div class="kpi-card__label">Activities</div>
+            <div class="kpi-card__value">4,500</div>
+            <div class="kpi-card__desc">Tracked activities</div>
+            <div class="kpi-card__delta kpi-card__delta--flat">92% completed / on-track</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ ORG PERFORMANCE ============================================================ -->
+      <section class="panel">
+        <div class="panel__head">
+          <div>
+            <div class="panel__title">Organizational Performance</div>
+            <div class="panel__subtitle">Trend across the current reporting period, versus target and prior period</div>
+          </div>
+          <div class="rangegroup" id="rangeGroup">
+            <button class="is-active" data-range="monthly">Monthly</button>
+            <button data-range="quarterly">Quarterly</button>
+            <button data-range="annual">Annual</button>
+          </div>
+        </div>
+        <div class="tabgroup" id="perfTabs">
+          <button class="is-active" data-metric="projects">Projects</button>
+          <button data-metric="indicators">Indicators</button>
+          <button data-metric="activities">Activities</button>
+          <button data-metric="budget">Budget</button>
+          <button data-metric="beneficiaries">Beneficiaries</button>
+        </div>
+        <div style="height:300px; margin-top:18px;"><canvas id="orgPerformanceChart"></canvas></div>
+        <div class="legend-row">
+          <span><span class="legend-dot" style="background:#008037"></span>Current period</span>
+          <span><span class="legend-dot" style="background:#a7d13d"></span>Previous period</span>
+          <span><span class="legend-dot" style="background:#00203f"></span>Target</span>
+        </div>
+      </section>
+
+      <!-- ============================================================ THEMATIC AREAS ============================================================ -->
+      <section id="thematic">
+        <div class="section-heading">
+          <div>
+            <h2>Thematic Area Performance</h2>
+            <div class="section-heading__sub">GAYO's four strategic thematic areas, ranked by indicator performance</div>
+          </div>
+        </div>
+        <div class="theme-grid">
+          <div class="theme-card" data-theme="waste">
+            <span class="theme-card__tag">Zero Waste Cities</span>
+            <div class="theme-card__perf">88%</div>
+            <div class="theme-card__spark"><canvas></canvas></div>
+            <div class="theme-card__meta"><div><b>62</b>Projects</div><div><b>91%</b>On track</div></div>
+            <a class="theme-card__link" href="#">View Intelligence <svg><use href="#ic-chevron-right"/></svg></a>
+          </div>
+          <div class="theme-card" data-theme="adaptation">
+            <span class="theme-card__tag">Adaptation &amp; Resilience</span>
+            <div class="theme-card__perf">82%</div>
+            <div class="theme-card__spark"><canvas></canvas></div>
+            <div class="theme-card__meta"><div><b>48</b>Projects</div><div><b>84%</b>On track</div></div>
+            <a class="theme-card__link" href="#">View Intelligence <svg><use href="#ic-chevron-right"/></svg></a>
+          </div>
+          <div class="theme-card" data-theme="transition">
+            <span class="theme-card__tag">Just Transition</span>
+            <div class="theme-card__perf">79%</div>
+            <div class="theme-card__spark"><canvas></canvas></div>
+            <div class="theme-card__meta"><div><b>39</b>Projects</div><div><b>81%</b>On track</div></div>
+            <a class="theme-card__link" href="#">View Intelligence <svg><use href="#ic-chevron-right"/></svg></a>
+          </div>
+          <div class="theme-card" data-theme="jobs">
+            <span class="theme-card__tag">Green Jobs for Youth</span>
+            <div class="theme-card__perf">91%</div>
+            <div class="theme-card__spark"><canvas></canvas></div>
+            <div class="theme-card__meta"><div><b>41</b>Projects</div><div><b>94%</b>On track</div></div>
+            <a class="theme-card__link" href="#">View Intelligence <svg><use href="#ic-chevron-right"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ PORTFOLIO + MERL ============================================================ -->
+      <section class="grid-2">
+        <div class="panel" id="portfolio">
+          <div class="panel__head">
+            <div>
+              <div class="panel__title">Project Portfolio</div>
+              <div class="panel__subtitle">Click a project to open its workspace</div>
+            </div>
+          </div>
+          <div class="status-toggle">
+            <button class="is-active">All <span class="count">245</span></button>
+            <button>Active <span class="count">189</span></button>
+            <button>At Risk <span class="count">31</span></button>
+            <button>Delayed <span class="count">14</span></button>
+            <button>Completed <span class="count">11</span></button>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>Project</th><th>Theme</th><th>Country</th><th>Progress</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="proj-name">Zero Waste Accra</div><div class="proj-sub">GAYO-018</div></td>
+                  <td>Zero Waste</td><td>Ghana</td>
+                  <td><div class="progress-mini"><div class="progress-mini__track"><div class="progress-mini__fill" style="width:84%"></div></div><span class="progress-mini__val">84%</span></div></td>
+                  <td><span class="pill pill--ontrack">On Track</span></td>
+                </tr>
+                <tr>
+                  <td><div class="proj-name">Climate Resilience Initiative</div><div class="proj-sub">GAYO-031</div></td>
+                  <td>Adaptation</td><td>Kenya</td>
+                  <td><div class="progress-mini"><div class="progress-mini__track"><div class="progress-mini__fill" style="width:68%; background:var(--status-warning)"></div></div><span class="progress-mini__val">68%</span></div></td>
+                  <td><span class="pill pill--risk">At Risk</span></td>
+                </tr>
+                <tr>
+                  <td><div class="proj-name">Youth Green Jobs</div><div class="proj-sub">GAYO-009</div></td>
+                  <td>Green Jobs</td><td>Ghana</td>
+                  <td><div class="progress-mini"><div class="progress-mini__track"><div class="progress-mini__fill" style="width:92%"></div></div><span class="progress-mini__val">92%</span></div></td>
+                  <td><span class="pill pill--ontrack">On Track</span></td>
+                </tr>
+                <tr>
+                  <td><div class="proj-name">Just Transition Programme</div><div class="proj-sub">GAYO-024</div></td>
+                  <td>Just Transition</td><td>Nigeria</td>
+                  <td><div class="progress-mini"><div class="progress-mini__track"><div class="progress-mini__fill" style="width:61%; background:var(--status-critical)"></div></div><span class="progress-mini__val">61%</span></div></td>
+                  <td><span class="pill pill--delayed">Delayed</span></td>
+                </tr>
+                <tr>
+                  <td><div class="proj-name">Circular Markets Kampala</div><div class="proj-sub">GAYO-041</div></td>
+                  <td>Zero Waste</td><td>Uganda</td>
+                  <td><div class="progress-mini"><div class="progress-mini__track"><div class="progress-mini__fill" style="width:100%; background:var(--status-info)"></div></div><span class="progress-mini__val">100%</span></div></td>
+                  <td><span class="pill pill--done">Completed</span></td>
+                </tr>
+                <tr>
+                  <td><div class="proj-name">Kalahari Resilience Corridor</div><div class="proj-sub">GAYO-052</div></td>
+                  <td>Adaptation</td><td>Botswana</td>
+                  <td><div class="progress-mini"><div class="progress-mini__track"><div class="progress-mini__fill" style="width:76%"></div></div><span class="progress-mini__val">76%</span></div></td>
+                  <td><span class="pill pill--ontrack">On Track</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel" id="merl">
+          <div class="panel__head">
+            <div>
+              <div class="panel__title">MERL Performance</div>
+              <div class="panel__subtitle">Output, outcome &amp; impact evidence engine</div>
+            </div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-item"><div class="stat-item__label">Indicators</div><div class="stat-item__value">486</div><div class="stat-item__sub">Active</div></div>
+            <div class="stat-item"><div class="stat-item__label">Output</div><div class="stat-item__value">91%</div><div class="stat-item__sub">On track</div></div>
+            <div class="stat-item"><div class="stat-item__label">Outcome</div><div class="stat-item__value">78%</div><div class="stat-item__sub">On track</div></div>
+            <div class="stat-item"><div class="stat-item__label">Impact</div><div class="stat-item__value">72%</div><div class="stat-item__sub">On track</div></div>
+            <div class="stat-item"><div class="stat-item__label">Data Quality</div><div class="stat-item__value">94%</div><div class="stat-item__sub">Verified</div></div>
+          </div>
+          <div class="mini-chart"><canvas id="merlChart"></canvas></div>
+        </div>
+      </section>
+
+      <!-- ============================================================ FINANCE + BENEFICIARIES ============================================================ -->
+      <section class="grid-2">
+        <div class="panel" id="finance">
+          <div class="panel__head">
+            <div>
+              <div class="panel__title">Financial Performance</div>
+              <div class="panel__subtitle">Portfolio-wide budget and expenditure tracking</div>
+            </div>
+          </div>
+          <div class="finance-figures">
+            <div class="stat-item"><div class="stat-item__label">Portfolio Budget</div><div class="stat-item__value">$14.8M</div></div>
+            <div class="stat-item"><div class="stat-item__label">Utilized</div><div class="stat-item__value">$9.7M</div></div>
+            <div class="stat-item"><div class="stat-item__label">Utilization</div><div class="stat-item__value">65.5%</div></div>
+            <div class="stat-item"><div class="stat-item__label">Remaining</div><div class="stat-item__value">$5.1M</div></div>
+          </div>
+          <div class="budget-bar__track"><div class="budget-bar__fill" style="width:65.5%"></div></div>
+          <div class="budget-bar__label"><span>Budget utilization</span><span>65.5%</span></div>
+          <div class="finance-alerts">
+            <div class="finance-alert"><svg><use href="#ic-alert-triangle"/></svg>3 projects are <b>under-utilizing</b> allocated budget this quarter</div>
+            <div class="finance-alert"><svg><use href="#ic-alert-triangle"/></svg>1 project has an <b>overspending alert</b> above 95% utilization</div>
+            <div class="finance-alert"><svg><use href="#ic-calendar"/></svg><b>4 funding deadlines</b> fall within the next 30 days</div>
+          </div>
+        </div>
+
+        <div class="panel" id="beneficiaries">
+          <div class="panel__head">
+            <div>
+              <div class="panel__title">People &amp; Communities Reached</div>
+              <div class="panel__subtitle">Demonstration breakdown — populated from GAYO's MERL data</div>
+            </div>
+          </div>
+          <div class="beneficiary-hero">
+            <div class="beneficiary-hero__num">1,248,620</div>
+            <div class="beneficiary-hero__label">Total beneficiaries</div>
+          </div>
+          <div class="demo-bars">
+            <div class="demo-bar__row"><span class="demo-bar__name">Women</span><div class="demo-bar__track"><div class="demo-bar__fill" style="width:48%; background:var(--gayo-green)"></div></div><span class="demo-bar__val">48%</span></div>
+            <div class="demo-bar__row"><span class="demo-bar__name">Men</span><div class="demo-bar__track"><div class="demo-bar__fill" style="width:42%; background:var(--gayo-navy)"></div></div><span class="demo-bar__val">42%</span></div>
+            <div class="demo-bar__row"><span class="demo-bar__name">Youth (under 35)</span><div class="demo-bar__track"><div class="demo-bar__fill" style="width:37%; background:var(--gayo-lime)"></div></div><span class="demo-bar__val">37%</span></div>
+            <div class="demo-bar__row"><span class="demo-bar__name">Persons with disabilities</span><div class="demo-bar__track"><div class="demo-bar__fill" style="width:6%; background:var(--status-info)"></div></div><span class="demo-bar__val">6%</span></div>
+            <div class="demo-bar__row"><span class="demo-bar__name">Other / not specified</span><div class="demo-bar__track"><div class="demo-bar__fill" style="width:7%; background:var(--ink-45)"></div></div><span class="demo-bar__val">7%</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ GEOGRAPHIC INTELLIGENCE ============================================================ -->
+      <section class="panel" id="geo">
+        <div class="panel__head">
+          <div>
+            <div class="panel__title">Where GAYO Works</div>
+            <div class="panel__subtitle">Country offices, project density and beneficiary concentration</div>
+          </div>
+        </div>
+        <div class="geo-controls">
+          <button class="is-active" data-layer="projects">Projects</button>
+          <button data-layer="beneficiaries">Beneficiaries</button>
+          <button data-layer="activities">Activities</button>
+          <button data-layer="interventions">Interventions</button>
+          <button data-layer="impact">Impact</button>
+        </div>
+        <div class="geo-panel">
+          <div class="geo-map-wrap">
+            <svg viewBox="0 0 300 340" aria-label="Stylized map of GAYO's country offices across Africa">
+              <g stroke="#a7d13d" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.9">
+                <path d="M186 24 C270 72 276 174 234 246" opacity="0.95"/>
+                <path d="M165 48 C234 90 240 168 204 228" opacity="0.8"/>
+                <path d="M147 75 C201 108 207 165 180 213" opacity="0.65"/>
+                <path d="M132 102 C171 126 177 162 159 198" opacity="0.5"/>
+              </g>
+              <path d="M90 264 L120 222" stroke="#a7d13d" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
+              <path d="M66 276 L102 222" stroke="#a7d13d" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
+
+              <!-- markers: approximate relative placement -->
+              <g class="geo-marker" data-country="Ghana">
+                <circle cx="128" cy="150" r="9" fill="#008037" opacity="0.22"/>
+                <circle cx="128" cy="150" r="5" fill="#008037"/>
+              </g>
+              <g class="geo-marker" data-country="Nigeria">
+                <circle cx="150" cy="140" r="8" fill="#008037" opacity="0.2"/>
+                <circle cx="150" cy="140" r="4.5" fill="#008037"/>
+              </g>
+              <g class="geo-marker" data-country="Kenya">
+                <circle cx="205" cy="170" r="9" fill="#00203f" opacity="0.22"/>
+                <circle cx="205" cy="170" r="5" fill="#00203f"/>
+              </g>
+              <g class="geo-marker" data-country="Uganda">
+                <circle cx="188" cy="176" r="7" fill="#00203f" opacity="0.2"/>
+                <circle cx="188" cy="176" r="4" fill="#00203f"/>
+              </g>
+              <g class="geo-marker" data-country="Botswana">
+                <circle cx="195" cy="238" r="8" fill="#a7d13d" opacity="0.28"/>
+                <circle cx="195" cy="238" r="4.5" fill="#6f9f1f"/>
+              </g>
+              <g class="geo-marker" data-country="Senegal">
+                <circle cx="88" cy="130" r="6.5" fill="#008037" opacity="0.2"/>
+                <circle cx="88" cy="130" r="3.6" fill="#008037"/>
+              </g>
+            </svg>
+            <div class="geo-legend">
+              <div><span class="legend-dot" style="background:#008037"></span>Country office</div>
+              <div><span class="legend-dot" style="background:#00203f"></span>East Africa hub</div>
+              <div><span class="legend-dot" style="background:#6f9f1f"></span>Southern Africa hub</div>
+            </div>
+          </div>
+          <div class="office-list">
+            <div class="office-item"><span class="office-item__flag">GH</span><div><div class="office-item__name">Ghana — HQ</div><div class="office-item__meta">Accra · West Africa</div></div><div class="office-item__stat"><b>62</b><span>projects</span></div></div>
+            <div class="office-item"><span class="office-item__flag">KE</span><div><div class="office-item__name">Kenya</div><div class="office-item__meta">Nairobi · East Africa</div></div><div class="office-item__stat"><b>34</b><span>projects</span></div></div>
+            <div class="office-item"><span class="office-item__flag">NG</span><div><div class="office-item__name">Nigeria</div><div class="office-item__meta">Lagos · West Africa</div></div><div class="office-item__stat"><b>29</b><span>projects</span></div></div>
+            <div class="office-item"><span class="office-item__flag">UG</span><div><div class="office-item__name">Uganda</div><div class="office-item__meta">Kampala · East Africa</div></div><div class="office-item__stat"><b>21</b><span>projects</span></div></div>
+            <div class="office-item"><span class="office-item__flag">BW</span><div><div class="office-item__name">Botswana</div><div class="office-item__meta">Gaborone · Southern Africa</div></div><div class="office-item__stat"><b>14</b><span>projects</span></div></div>
+            <div class="office-item"><span class="office-item__flag">SN</span><div><div class="office-item__name">Senegal</div><div class="office-item__meta">Dakar · West Africa</div></div><div class="office-item__stat"><b>11</b><span>projects</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ HEALTH + ACTIVITY + ALERTS ============================================================ -->
+      <section class="grid-2">
+        <div class="stack">
+          <div class="panel">
+            <div class="panel__head">
+              <div>
+                <div class="panel__title">Implementation Health</div>
+                <div class="panel__subtitle">Share of activities by delivery status</div>
+              </div>
+            </div>
+            <div class="health-bars">
+              <div>
+                <div class="health-row__top"><span>On Track</span><b>74%</b></div>
+                <div class="health-row__track"><div class="health-row__fill" style="width:74%; background:var(--gayo-green)"></div></div>
+              </div>
+              <div>
+                <div class="health-row__top"><span>At Risk</span><b>18%</b></div>
+                <div class="health-row__track"><div class="health-row__fill" style="width:18%; background:var(--status-warning)"></div></div>
+              </div>
+              <div>
+                <div class="health-row__top"><span>Delayed</span><b>8%</b></div>
+                <div class="health-row__track"><div class="health-row__fill" style="width:8%; background:var(--status-critical)"></div></div>
+              </div>
+            </div>
+            <div class="section-heading__sub" style="margin-bottom:10px;">Priority issues</div>
+            <div class="issue-list">
+              <div class="issue-item"><span class="issue-dot" style="background:var(--status-critical)"></span><b>12</b>&nbsp;overdue activities</div>
+              <div class="issue-item"><span class="issue-dot" style="background:var(--status-warning)"></span><b>8</b>&nbsp;indicators below target</div>
+              <div class="issue-item"><span class="issue-dot" style="background:var(--status-caution)"></span><b>5</b>&nbsp;pending approvals</div>
+              <div class="issue-item"><span class="issue-dot" style="background:var(--status-info)"></span><b>14</b>&nbsp;reports due soon</div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head">
+              <div>
+                <div class="panel__title">Attention Required</div>
+                <div class="panel__subtitle">Alert centre</div>
+              </div>
+            </div>
+            <div class="alert-grid">
+              <div class="alert-card alert-card--critical">
+                <div class="alert-card__icon"><svg><use href="#ic-alert-triangle"/></svg></div>
+                <div><div class="alert-card__tag">Critical</div><div class="alert-card__text">3 projects have exceeded budget thresholds</div></div>
+                <a class="alert-card__cta" href="#finance">Review</a>
+              </div>
+              <div class="alert-card alert-card--warning">
+                <div class="alert-card__icon"><svg><use href="#ic-check-square"/></svg></div>
+                <div><div class="alert-card__tag">Action required</div><div class="alert-card__text">12 activities are overdue</div></div>
+                <a class="alert-card__cta" href="#">View activities</a>
+              </div>
+              <div class="alert-card alert-card--caution">
+                <div class="alert-card__icon"><svg><use href="#ic-target"/></svg></div>
+                <div><div class="alert-card__tag">MERL</div><div class="alert-card__text">8 indicators require verification</div></div>
+                <a class="alert-card__cta" href="#merl">Review data</a>
+              </div>
+              <div class="alert-card alert-card--info">
+                <div class="alert-card__icon"><svg><use href="#ic-bar-chart"/></svg></div>
+                <div><div class="alert-card__tag">Reporting</div><div class="alert-card__text">5 donor reports due within 14 days</div></div>
+                <a class="alert-card__cta" href="#">View reports</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__head">
+            <div>
+              <div class="panel__title">Recent Activity</div>
+              <div class="panel__subtitle">Organization-wide activity feed</div>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"><svg><use href="#ic-check-square"/></svg></div>
+              <div><div class="timeline-time">Today — 10:42</div><div class="timeline-text">MERL approved <b>12 indicator submissions</b></div></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><svg><use href="#ic-upload"/></svg></div>
+              <div><div class="timeline-time">Today — 09:18</div><div class="timeline-text">Project Officer uploaded evidence to <b>Zero Waste Accra</b></div></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><svg><use href="#ic-dollar"/></svg></div>
+              <div><div class="timeline-time">Yesterday — 16:34</div><div class="timeline-text">Finance updated expenditure for <b>Project GAYO-024</b></div></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><svg><use href="#ic-users"/></svg></div>
+              <div><div class="timeline-time">Yesterday — 14:20</div><div class="timeline-text">New beneficiary dataset imported</div></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"><svg><use href="#ic-file"/></svg></div>
+              <div><div class="timeline-time">Monday — 11:03</div><div class="timeline-text">Quarterly report submitted for review</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ DECISION SUPPORT ============================================================ -->
+      <section class="decision-panel">
+        <div class="decision-panel__eyebrow"><svg><use href="#ic-sparkle"/></svg>Decision support</div>
+        <h2>Organizational insights</h2>
+        <p class="decision-panel__note">Generated from portfolio, MERL and financial data to support faster management action — presented here as decision support, not as an autonomous decision-maker.</p>
+        <div class="insight-grid">
+          <div class="insight-card">
+            <div class="insight-card__label">Portfolio performance</div>
+            <div class="insight-card__text">82% of active projects are currently on track. Four projects show declining implementation performance over the last two reporting periods.</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-card__label">MERL alert</div>
+            <div class="insight-card__text">Eight indicators require verification before the next reporting cycle.</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-card__label">Resource insight</div>
+            <div class="insight-card__text">Three projects have expenditure rates significantly below their implementation progress.</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-card__label">Management recommendation</div>
+            <div class="insight-card__text">Review delayed activities and under-utilized budgets in the affected project portfolio.</div>
+          </div>
+        </div>
+        <div class="decision-actions">
+          <button class="is-primary">View Analysis</button>
+          <button>Explore Data</button>
+          <button>Generate Report</button>
+          <button>Create Action</button>
+        </div>
+      </section>
+
+      <!-- ============================================================ QUICK ACTIONS ============================================================ -->
+      <section>
+        <div class="section-heading"><div><h2>Quick Actions</h2></div></div>
+        <div class="quick-actions">
+          <button class="quick-action"><span class="quick-action__icon"><svg><use href="#ic-folder"/></svg></span><span class="quick-action__label">New Project</span></button>
+          <button class="quick-action"><span class="quick-action__icon"><svg><use href="#ic-form"/></svg></span><span class="quick-action__label">Create Form</span></button>
+          <button class="quick-action"><span class="quick-action__icon"><svg><use href="#ic-target"/></svg></span><span class="quick-action__label">Add Indicator</span></button>
+          <button class="quick-action"><span class="quick-action__icon"><svg><use href="#ic-user-plus"/></svg></span><span class="quick-action__label">Register Beneficiary</span></button>
+          <button class="quick-action"><span class="quick-action__icon"><svg><use href="#ic-upload"/></svg></span><span class="quick-action__label">Upload Evidence</span></button>
+          <button class="quick-action"><span class="quick-action__icon"><svg><use href="#ic-bar-chart"/></svg></span><span class="quick-action__label">Create Report</span></button>
+          <button class="quick-action"><span class="quick-action__icon"><svg><use href="#ic-check-square"/></svg></span><span class="quick-action__label">Add Activity</span></button>
+          <button class="quick-action"><span class="quick-action__icon"><svg><use href="#ic-file-plus"/></svg></span><span class="quick-action__label">Add Document</span></button>
+        </div>
+      </section>
+
+      <!-- ============================================================ BOTTOM INTELLIGENCE BAR ============================================================ -->
+      <footer class="statusbar">
+        <span class="statusbar__item"><span class="statusbar__dot"></span>Data Quality 94%</span>
+        <span class="statusbar__item"><span class="statusbar__dot statusbar__dot--live"></span>System Status: Operational</span>
+        <span class="statusbar__item"><svg style="width:13px;height:13px"><use href="#ic-clock"/></svg>Last synchronization 2 min ago</span>
+        <span class="statusbar__item">12 pending actions</span>
+        <span class="statusbar__item">5 reports awaiting approval</span>
+        <span class="statusbar__brand">MIOMS · GAYO Digital Operating System</span>
+      </footer>
+
+    </main>
+  </div>
+</div>
+
+<p style="text-align:center; font-size:11px; color:#7c877f; padding:0 20px 28px; max-width:1440px; margin:0 auto;">
+  Prototype 01 — Executive Overview. All figures are illustrative demonstration data and do not represent GAYO's actual reported portfolio.
+</p>
+
+<script src="assets/vendor/chart.umd.min.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

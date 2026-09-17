@@ -272,6 +272,27 @@
   }
 
   /* ---------------------------------------------------------------- */
+  /* Generic in-page view tabs (Data Collection, Project Workspace, …) */
+  /* ---------------------------------------------------------------- */
+  (function () {
+    var tabBtns = document.querySelectorAll(".view-tabs button");
+    var panes = document.querySelectorAll(".view-pane");
+    if (!tabBtns.length || !panes.length) return;
+
+    function showView(key) {
+      tabBtns.forEach(function (b) { b.classList.toggle("is-active", b.getAttribute("data-view") === key); });
+      panes.forEach(function (p) { p.classList.toggle("is-active", p.id === "view-" + key); });
+      window.dispatchEvent(new CustomEvent("viewtab:shown", { detail: { key: key } }));
+    }
+
+    tabBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () { showView(btn.getAttribute("data-view")); });
+    });
+
+    window._showView = showView;
+  })();
+
+  /* ---------------------------------------------------------------- */
   /* Time-aware greeting + live local date/time                        */
   /* ---------------------------------------------------------------- */
   function timeGreeting(hour) {

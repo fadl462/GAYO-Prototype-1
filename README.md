@@ -20,11 +20,12 @@ an actual data source.
 | My Workspace | `workspace.html` |
 | Thematic Areas | `thematic-areas.html` |
 | Projects | `projects.html` |
-| Project Workspace (template) | `project-workspace.html` |
+| Project Workspace (template — 11 tabs) | `project-workspace.html` |
 | Activities | `activities.html` |
 | MERL | `merl.html` |
 | Data Collection | `data-collection.html` |
 | Beneficiaries | `beneficiaries.html` |
+| Beneficiary Profile (template) | `beneficiary-profile.html` |
 | GIS & Locations | `gis.html` |
 | Finance | `finance.html` |
 | Departments | `departments.html` |
@@ -37,10 +38,13 @@ an actual data source.
 | Integrations | `integrations.html` |
 | Administration | `administration.html` |
 
-`project-workspace.html` is a single template — in this prototype every
-project row and card links to the same demo project (Zero Waste Accra) rather
-than to 245 individual pages. Wiring it to a real per-project URL is the
-natural next step once this connects to actual data.
+`project-workspace.html` and `beneficiary-profile.html` are single templates —
+every project or beneficiary row/card in this prototype links to the same
+demo record rather than to hundreds of individual pages. Wiring them to a
+real per-record URL is the natural next step once this connects to actual
+data. `project-workspace.html` itself now has the full 11-tab structure
+(Overview, Activities, Indicators, Targets, Beneficiaries, Documents, Budget,
+Reports, Photos, Learning, Data Collection) called for in the requirements.
 
 ## The Africa map
 
@@ -59,6 +63,39 @@ authoring time from real boundary data, not hand-drawn) and is rendered by
 `assets/js/africa-map.js`. Extending the focus countries beyond the current
 six (Ghana, Kenya, Nigeria, Uganda, Botswana, Senegal) means re-running the
 generation step against the same public dataset for the new country names.
+
+When zoomed into a country, illustrative **district/site-level markers** also
+appear (e.g. "Recycling Market — Sub-district 3", "Turkana Early-Warning
+Station"), each tagged with a site type (Waste Site, Market, Climate Hotspot,
+etc.), with a legend list below the map. Their coordinates are placed by eye
+within each country's real shape, not from real district geodata — swap in
+actual site coordinates once they're available.
+
+## Role-based dashboards
+
+Every page carries a **role switcher** in the top bar (hidden below 540px
+width to save space — set it from a wider screen and it persists via
+`localStorage` as you navigate, including in the mobile drawer). Six roles
+stand in for the eleven in the requirements doc: Executive/Director,
+Programme Manager, MERL Officer, Finance Manager, Field Officer, and
+Partner/Donor.
+
+Switching roles does two things, both driven by `assets/js/role.js`:
+- **Sidebar navigation** shows only the sections that role's `data-roles`
+  list includes (set per nav item in `gen_pages.py`'s `NAV` structure) —
+  empty groups collapse automatically.
+- **Section-level hiding** on the page itself, via a `data-role-hide="a,b"`
+  attribute on any element. Right now this is applied to two sections on the
+  Executive Overview (the Finance panel and the Decision Support panel) as a
+  worked example — extending it to other pages just means adding the
+  attribute to the relevant section and regenerating.
+
+A banner at the top of the page content always states which role is active
+and what it's scoped to, so the changing nav doesn't read as a bug.
+
+This is a front-end simulation of RBAC for demonstration purposes — there's
+no real authentication or server-side enforcement behind it (see Technology
+Architecture below).
 
 ## What's inside
 
@@ -119,6 +156,11 @@ hand-edit 20 files every time something in the shell changes.
 
 ## Notes for the next phase
 
+- **Technology Architecture**: this is a static front-end only — no
+  database, API, authentication, PWA/offline support, or real RBAC
+  enforcement. The role switcher is a client-side simulation for
+  demonstration; a real build needs the backend described in the
+  requirements doc (PostgreSQL, REST API, auth, encryption, audit logs).
 - **Per-project pages**: `project-workspace.html` is currently one template
   shared by every project link. A real build would generate one per project
   (or load data dynamically via query string / backend).

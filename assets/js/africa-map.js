@@ -60,7 +60,24 @@
   function renderZoomedCountry(container, name) {
     var z = DATA.zoomed[name];
     var info = OFFICE_INFO[name] || {};
+    var sites = (DATA.sites && DATA.sites[name]) || [];
     if (!z) return;
+
+    var siteMarkers = sites.map(function (s, i) {
+      return '<g class="geo-marker" data-site="' + i + '">' +
+        '<circle cx="' + s.x + '" cy="' + s.y + '" r="7" fill="#d6493f" opacity="0.22"></circle>' +
+        '<circle cx="' + s.x + '" cy="' + s.y + '" r="3.6" fill="#d6493f"></circle>' +
+        '</g>';
+    }).join("");
+
+    var siteList = sites.length ? (
+      '<div class="site-legend">' +
+        '<div class="site-legend__title">Project sites in ' + name + '</div>' +
+        sites.map(function (s) {
+          return '<div class="site-legend__row"><span class="site-legend__dot"></span><span><b>' + s.name + '</b><span class="site-legend__type">' + s.type + '</span></span></div>';
+        }).join("") +
+      '</div>'
+    ) : "";
 
     container.innerHTML =
       '<div class="zoomed-map">' +
@@ -70,12 +87,14 @@
         '</button>' +
         '<svg viewBox="0 0 ' + z.w + ' ' + z.h + '" aria-label="Map of ' + name + '" style="width:100%; height:100%;">' +
           '<path d="' + z.d + '" fill="' + (info.color || "#008037") + '"></path>' +
+          siteMarkers +
         '</svg>' +
         '<div class="zoomed-map__caption">' +
           '<b>' + (info.label || name) + '</b>' +
           '<span>' + (info.meta || "") + '</span>' +
           (info.projects ? '<span class="zoomed-map__stats"><b>' + info.projects + '</b> projects · <b>' + info.staff + '</b> staff</span>' : '') +
         '</div>' +
+        siteList +
       '</div>';
 
     container.querySelector(".zoomed-map__back").addEventListener("click", function () {

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zero Waste Accra | MIOMS · GAYO</title>
-<meta name="description" content="Project workspace template — Zero Waste Accra (GAYO-018).">
+<meta name="description" content="Project workspace template — Zero Waste Accra (GAYO-018). Overview, Activities, Indicators, Targets, Beneficiaries, Documents, Budget, Reports, Photos, Learning and Data Collection.">
 <link rel="icon" href="assets/img/brandmark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="assets/css/styles.css">
@@ -57,6 +57,14 @@
   <symbol id="ic-calc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8 7.5h8"/><circle cx="8.3" cy="12" r="0.9" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="0.9" fill="currentColor" stroke="none"/><circle cx="15.7" cy="12" r="0.9" fill="currentColor" stroke="none"/><circle cx="8.3" cy="15.7" r="0.9" fill="currentColor" stroke="none"/><circle cx="12" cy="15.7" r="0.9" fill="currentColor" stroke="none"/><circle cx="15.7" cy="15.7" r="0.9" fill="currentColor" stroke="none"/></symbol>
   <symbol id="ic-grip" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="9" cy="6" r="1.4"/><circle cx="15" cy="6" r="1.4"/><circle cx="9" cy="12" r="1.4"/><circle cx="15" cy="12" r="1.4"/><circle cx="9" cy="18" r="1.4"/><circle cx="15" cy="18" r="1.4"/></symbol>
   <symbol id="ic-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 7h15M9.5 7V5a1.5 1.5 0 0 1 1.5-1.5h2A1.5 1.5 0 0 1 14.5 5v2"/><path d="M6.5 7l1 12.5a2 2 0 0 0 2 1.8h5a2 2 0 0 0 2-1.8L17.5 7"/><path d="M10 11v6M14 11v6"/></symbol>
+  <symbol id="ic-video" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="M15 10.5 21 7v10l-6-3.5Z"/></symbol>
+  <symbol id="ic-audio" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v0M8 8.5v7M12 5.5v13M16 8.5v7M20 12v0"/></symbol>
+  <symbol id="ic-barcode" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 5v14M8 5v14M11 5v14M15 5v14M17.5 5v14M20 5v14"/></symbol>
+  <symbol id="ic-qrcode" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h3v3h-3zM19 14v3M14 19h3"/></symbol>
+  <symbol id="ic-caret-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M9.5 10.5 12 13l2.5-2.5"/></symbol>
+  <symbol id="ic-ranking" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h1M6 12h1M6 16h1"/><path d="M10.5 8h8M10.5 12h6M10.5 16h4"/></symbol>
+  <symbol id="ic-likert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 12h16"/><circle cx="4" cy="12" r="1.6" fill="currentColor"/><circle cx="9.3" cy="12" r="1.6" fill="none"/><circle cx="14.7" cy="12" r="1.6" fill="none"/><circle cx="20" cy="12" r="1.6" fill="none"/></symbol>
+  <symbol id="ic-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11a4 4 0 0 1 4 4v1"/><path d="M16 9l3-3-3-3"/><path d="M20 17H9a4 4 0 0 1-4-4v-1"/><path d="M8 15l-3 3 3 3"/></symbol>
 </svg>
 
 <div class="app">
@@ -70,34 +78,34 @@
     </div>
 
     <nav class="sidebar__nav" aria-label="Primary">
-      <div class="sidebar__group-label">Overview</div>
-      <a class="navlink" href="index.html"><svg><use href="#ic-home"/></svg>Executive Overview</a>
-      <a class="navlink" href="workspace.html"><svg><use href="#ic-grid"/></svg>My Workspace</a>
+      <div class="sidebar__group-label" data-roles="exec,pm,merl,finance,field,partner">Overview</div>
+      <a class="navlink" href="index.html" data-roles="exec,pm,merl,finance"><svg><use href="#ic-home"/></svg>Executive Overview</a>
+      <a class="navlink" href="workspace.html" data-roles="exec,pm,merl,finance,field,partner"><svg><use href="#ic-grid"/></svg>My Workspace</a>
 
-      <div class="sidebar__group-label">Programme</div>
-      <a class="navlink" href="thematic-areas.html"><svg><use href="#ic-layers"/></svg>Thematic Areas</a>
-      <a class="navlink" href="projects.html"><svg><use href="#ic-folder"/></svg>Projects</a>
-      <a class="navlink" href="activities.html"><svg><use href="#ic-check-square"/></svg>Activities</a>
-      <a class="navlink" href="merl.html"><svg><use href="#ic-target"/></svg>MERL</a>
-      <a class="navlink" href="data-collection.html"><svg><use href="#ic-clipboard"/></svg>Data Collection</a>
-      <a class="navlink" href="beneficiaries.html"><svg><use href="#ic-users"/></svg>Beneficiaries</a>
-      <a class="navlink" href="gis.html"><svg><use href="#ic-pin"/></svg>GIS & Locations</a>
+      <div class="sidebar__group-label" data-roles="exec,pm,merl,finance,field,partner">Programme</div>
+      <a class="navlink" href="thematic-areas.html" data-roles="exec,pm,merl,partner"><svg><use href="#ic-layers"/></svg>Thematic Areas</a>
+      <a class="navlink" href="projects.html" data-roles="exec,pm,merl,finance,field,partner"><svg><use href="#ic-folder"/></svg>Projects</a>
+      <a class="navlink" href="activities.html" data-roles="exec,pm,merl,field"><svg><use href="#ic-check-square"/></svg>Activities</a>
+      <a class="navlink" href="merl.html" data-roles="exec,pm,merl"><svg><use href="#ic-target"/></svg>MERL</a>
+      <a class="navlink" href="data-collection.html" data-roles="exec,pm,merl,field"><svg><use href="#ic-clipboard"/></svg>Data Collection</a>
+      <a class="navlink" href="beneficiaries.html" data-roles="exec,pm,merl,field"><svg><use href="#ic-users"/></svg>Beneficiaries</a>
+      <a class="navlink" href="gis.html" data-roles="exec,pm,merl,field"><svg><use href="#ic-pin"/></svg>GIS & Locations</a>
 
-      <div class="sidebar__group-label">Organization</div>
-      <a class="navlink" href="finance.html"><svg><use href="#ic-dollar"/></svg>Finance</a>
-      <a class="navlink" href="departments.html"><svg><use href="#ic-building"/></svg>Departments</a>
-      <a class="navlink" href="country-offices.html"><svg><use href="#ic-globe"/></svg>Country Offices</a>
+      <div class="sidebar__group-label" data-roles="exec,pm,merl,finance,field,partner">Organization</div>
+      <a class="navlink" href="finance.html" data-roles="exec,finance"><svg><use href="#ic-dollar"/></svg>Finance</a>
+      <a class="navlink" href="departments.html" data-roles="exec,finance"><svg><use href="#ic-building"/></svg>Departments</a>
+      <a class="navlink" href="country-offices.html" data-roles="exec,pm,finance"><svg><use href="#ic-globe"/></svg>Country Offices</a>
 
-      <div class="sidebar__group-label">Knowledge</div>
-      <a class="navlink" href="documents.html"><svg><use href="#ic-file"/></svg>Documents</a>
-      <a class="navlink" href="knowledge-centre.html"><svg><use href="#ic-book"/></svg>Knowledge Centre</a>
-      <a class="navlink" href="evidence-repository.html"><svg><use href="#ic-archive"/></svg>Evidence Repository</a>
-      <a class="navlink" href="reports-analytics.html"><svg><use href="#ic-bar-chart"/></svg>Reports & Analytics</a>
+      <div class="sidebar__group-label" data-roles="exec,pm,merl,finance,field,partner">Knowledge</div>
+      <a class="navlink" href="documents.html" data-roles="exec,pm,merl,finance,field,partner"><svg><use href="#ic-file"/></svg>Documents</a>
+      <a class="navlink" href="knowledge-centre.html" data-roles="exec,pm,merl,finance,field,partner"><svg><use href="#ic-book"/></svg>Knowledge Centre</a>
+      <a class="navlink" href="evidence-repository.html" data-roles="exec,pm,merl,field"><svg><use href="#ic-archive"/></svg>Evidence Repository</a>
+      <a class="navlink" href="reports-analytics.html" data-roles="exec,pm,merl,finance,partner"><svg><use href="#ic-bar-chart"/></svg>Reports & Analytics</a>
 
-      <div class="sidebar__group-label">System</div>
-      <a class="navlink" href="notifications.html"><svg><use href="#ic-bell"/></svg>Notifications<span class="navlink__badge">6</span></a>
-      <a class="navlink" href="integrations.html"><svg><use href="#ic-link"/></svg>Integrations</a>
-      <a class="navlink" href="administration.html"><svg><use href="#ic-settings"/></svg>Administration</a>
+      <div class="sidebar__group-label" data-roles="exec,pm,merl,finance,field,partner">System</div>
+      <a class="navlink" href="notifications.html" data-roles="exec,pm,merl,finance,field,partner"><svg><use href="#ic-bell"/></svg>Notifications<span class="navlink__badge">6</span></a>
+      <a class="navlink" href="integrations.html" data-roles="exec"><svg><use href="#ic-link"/></svg>Integrations</a>
+      <a class="navlink" href="administration.html" data-roles="exec"><svg><use href="#ic-settings"/></svg>Administration</a>
     </nav>
 
     <div class="sidebar__footer">
@@ -121,15 +129,26 @@
         <input type="text" placeholder="Search projects, indicators, beneficiaries, documents, evidence…">
       </label>
       <div class="topbar__actions">
+        <label class="role-switcher" title="Preview MIOMS as a different role">
+          <svg style="width:14px;height:14px;color:var(--ink-45);"><use href="#ic-users"/></svg>
+          <select id="roleSwitcher" aria-label="View as role">
+            <option value="exec">Executive / Director</option>
+            <option value="pm">Programme Manager</option>
+            <option value="merl">MERL Officer</option>
+            <option value="finance">Finance Manager</option>
+            <option value="field">Field Officer</option>
+            <option value="partner">Partner / Donor</option>
+          </select>
+        </label>
         <a class="iconbtn" href="reports-analytics.html" aria-label="Recent activity"><svg><use href="#ic-clock"/></svg></a>
         <a class="iconbtn" href="knowledge-centre.html" aria-label="Help"><svg><use href="#ic-help"/></svg></a>
         <a class="iconbtn" href="notifications.html" aria-label="Notifications"><svg><use href="#ic-bell"/></svg><span class="iconbtn__dot"></span></a>
         <div class="topbar__divider"></div>
         <a class="profile" href="workspace.html">
-          <span class="profile__avatar">FR</span>
+          <span class="profile__avatar" id="profileAvatar">FR</span>
           <span class="profile__meta">
-            <span class="profile__name">Fadl · GAYO User</span>
-            <span class="profile__role">Executive Management</span>
+            <span class="profile__name" id="profileName">Fadl · GAYO User</span>
+            <span class="profile__role" id="profileRole">Executive Management</span>
           </span>
         </a>
       </div>
@@ -144,7 +163,7 @@
   <div>
     <div class="page-header__title">Zero Waste Accra <span style="color:var(--ink-45); font-weight:500; font-size:15px;">· GAYO-018</span></div>
     <div class="page-header__sub">Municipal solid-waste diversion and community recycling markets across five Accra Metropolitan sub-districts. Funded by UNEP, implemented with the Accra Metropolitan Assembly.</div>
-    <div style="margin-top:12px;"><span class="pill pill--ontrack">On Track</span></div>
+    <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;"><span class="pill pill--ontrack">On Track</span><span class="chip chip--connected">Active</span></div>
   </div>
   <div class="page-header__actions">
     <a class="btn btn--ghost" href="evidence-repository.html"><svg><use href="#ic-upload"/></svg>Upload Evidence</a>
@@ -159,49 +178,267 @@
   <div class="kpi-card"><div class="kpi-card__label">Activities</div><div class="kpi-card__value">38/45</div><div class="kpi-card__desc">Completed</div></div>
 </section>
 
-<section class="grid-2">
-  <div class="panel">
-    <div class="panel__head"><div><div class="panel__title">Project Details</div></div></div>
-    <div class="stat-grid" style="grid-template-columns:repeat(2,1fr);">
-      <div class="stat-item"><div class="stat-item__label">Theme</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">Zero Waste Cities</div></div>
-      <div class="stat-item"><div class="stat-item__label">Country</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">Ghana — Accra</div></div>
-      <div class="stat-item"><div class="stat-item__label">Funder</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">UNEP</div></div>
-      <div class="stat-item"><div class="stat-item__label">Duration</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">Jan 2024 – Dec 2026</div></div>
-      <div class="stat-item"><div class="stat-item__label">Project Lead</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">Ama Kwakyewaa</div></div>
-      <div class="stat-item"><div class="stat-item__label">Department</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">Programmes</div></div>
+<nav class="view-tabs" aria-label="Project Workspace views">
+  <button class="is-active" data-view="overview"><svg><use href="#ic-home"/></svg>Overview</button>
+  <button data-view="activities"><svg><use href="#ic-check-square"/></svg>Activities</button>
+  <button data-view="indicators"><svg><use href="#ic-target"/></svg>Indicators</button>
+  <button data-view="targets"><svg><use href="#ic-bar-chart"/></svg>Targets</button>
+  <button data-view="beneficiaries"><svg><use href="#ic-users"/></svg>Beneficiaries</button>
+  <button data-view="documents"><svg><use href="#ic-file"/></svg>Documents</button>
+  <button data-view="budget"><svg><use href="#ic-dollar"/></svg>Budget</button>
+  <button data-view="reports"><svg><use href="#ic-bar-chart"/></svg>Reports</button>
+  <button data-view="photos"><svg><use href="#ic-image"/></svg>Photos</button>
+  <button data-view="learning"><svg><use href="#ic-book"/></svg>Learning</button>
+  <button data-view="datacollection"><svg><use href="#ic-clipboard"/></svg>Data Collection</button>
+</nav>
+
+<!-- ================= OVERVIEW ================= -->
+<div class="view-pane is-active" id="view-overview">
+  <section class="grid-2">
+    <div class="panel">
+      <div class="panel__head"><div><div class="panel__title">Project Details</div></div></div>
+      <div class="stat-grid" style="grid-template-columns:repeat(2,1fr);">
+        <div class="stat-item"><div class="stat-item__label">Project Code</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">GAYO-018</div></div>
+        <div class="stat-item"><div class="stat-item__label">Theme</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">Zero Waste Cities</div></div>
+        <div class="stat-item"><div class="stat-item__label">Donor / Funding Partner</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">UNEP</div></div>
+        <div class="stat-item"><div class="stat-item__label">Funding Amount</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">$780,000</div></div>
+        <div class="stat-item"><div class="stat-item__label">Start Date</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">January 2024</div></div>
+        <div class="stat-item"><div class="stat-item__label">End Date</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">December 2026</div></div>
+        <div class="stat-item"><div class="stat-item__label">Country</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">Ghana</div></div>
+        <div class="stat-item"><div class="stat-item__label">Region</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">Greater Accra</div></div>
+        <div class="stat-item"><div class="stat-item__label">District</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">Accra Metropolitan (5 sub-districts)</div></div>
+        <div class="stat-item"><div class="stat-item__label">Project Manager</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">Ama Kwakyewaa</div></div>
+        <div class="stat-item"><div class="stat-item__label">Department</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">Programmes</div></div>
+        <div class="stat-item"><div class="stat-item__label">Implementing Partner</div><div class="stat-item__sub" style="margin-top:6px; font-size:13px;">Accra Metropolitan Assembly</div></div>
+      </div>
     </div>
-    <div class="panel__title" style="font-size:13.5px; margin-top:20px; margin-bottom:10px;">Indicator Progress</div>
+
+    <div class="panel">
+      <div class="panel__head"><div><div class="panel__title">Recent Activity</div></div></div>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-dot"><svg><use href="#ic-upload"/></svg></div><div><div class="timeline-time">2 days ago</div><div class="timeline-text">Site-visit photo evidence uploaded for Sub-district 3</div></div></div>
+        <div class="timeline-item"><div class="timeline-dot"><svg><use href="#ic-check-square"/></svg></div><div><div class="timeline-time">5 days ago</div><div class="timeline-text">Monthly household enrollment activity marked complete</div></div></div>
+        <div class="timeline-item"><div class="timeline-dot"><svg><use href="#ic-dollar"/></svg></div><div><div class="timeline-time">1 week ago</div><div class="timeline-text">Expenditure report reconciled — $42,000</div></div></div>
+        <div class="timeline-item"><div class="timeline-dot"><svg><use href="#ic-target"/></svg></div><div><div class="timeline-time">2 weeks ago</div><div class="timeline-text">Quarterly indicator review completed by MERL</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid-2">
+    <div class="panel">
+      <div class="panel__head"><div><div class="panel__title">Theory of Change &amp; Logframe</div></div></div>
+      <p style="font-size:12.5px; color:var(--ink-70); line-height:1.6;">If households are equipped with segregation infrastructure and sustained behaviour-change messaging, and if recycling markets provide reliable income for waste-pickers, then municipal waste diversion will increase and landfill dependency will fall across the five target sub-districts.</p>
+      <div class="info-card__meta" style="margin-top:12px;"><span>Logframe: <b>18 output/outcome indicators</b></span><span>Results Framework: <b>Linked to Zero Waste Cities theme</b></span></div>
+    </div>
+    <div class="panel">
+      <div class="panel__head"><div><div class="panel__title">Risk Register</div></div></div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Risk</th><th>Likelihood</th><th>Mitigation</th></tr></thead>
+          <tbody>
+            <tr><td class="proj-name">Recycling market vendor drop-off</td><td>Medium</td><td>Incentive scheme with Assembly</td></tr>
+            <tr><td class="proj-name">Delayed council permits</td><td>Low</td><td>Early engagement with district office</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Stakeholders</div></div></div>
+    <div class="card-grid">
+      <div class="info-card"><div class="info-card__title">Accra Metropolitan Assembly</div><div class="info-card__desc">Implementing partner — permits, land and municipal coordination.</div></div>
+      <div class="info-card"><div class="info-card__title">UNEP</div><div class="info-card__desc">Funding partner — donor reporting and compliance.</div></div>
+      <div class="info-card"><div class="info-card__title">Sub-district Waste Pickers Association</div><div class="info-card__desc">Community partner — recycling market operations.</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= ACTIVITIES ================= -->
+<div class="view-pane" id="view-activities">
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Project Activities</div><div class="panel__subtitle">38 of 45 completed</div></div></div>
+    <div class="status-toggle">
+      <button class="is-active">All <span class="count">45</span></button>
+      <button>On Track <span class="count">38</span></button>
+      <button>At Risk <span class="count">4</span></button>
+      <button>Delayed <span class="count">3</span></button>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Activity</th><th>Owner</th><th>Due Date</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="proj-name">Household enrollment drive — Sub-district 3</td><td>Ama Kwakyewaa</td><td>Sep 20, 2026</td><td><span class="pill pill--ontrack">On Track</span></td></tr>
+          <tr><td class="proj-name">Recycling station installation batch 4</td><td>Field Team</td><td>Sep 24, 2026</td><td><span class="pill pill--ontrack">On Track</span></td></tr>
+          <tr><td class="proj-name">Vendor income tracking survey</td><td>Ama Kwakyewaa</td><td>Sep 18, 2026</td><td><span class="pill pill--risk">At Risk</span></td></tr>
+          <tr><td class="proj-name">Council permit renewal — Sub-district 5</td><td>Assembly Liaison</td><td>Sep 12, 2026</td><td><span class="pill pill--delayed">Delayed</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<!-- ================= INDICATORS ================= -->
+<div class="view-pane" id="view-indicators">
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Indicator Progress</div><div class="panel__subtitle">Baseline, target and current values</div></div></div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Indicator</th><th>Level</th><th>Baseline</th><th>Target</th><th>Current</th><th>Means of Verification</th></tr></thead>
+        <tbody>
+          <tr><td class="proj-name">Recycling stations installed</td><td>Output</td><td>0</td><td>50</td><td>46</td><td>Site inspection log</td></tr>
+          <tr><td class="proj-name">Households enrolled</td><td>Output</td><td>0%</td><td>100%</td><td>78%</td><td>Enrollment form</td></tr>
+          <tr><td class="proj-name">Waste diverted from landfill</td><td>Outcome</td><td>12%</td><td>80%</td><td>61%</td><td>Municipal waste audit</td></tr>
+          <tr><td class="proj-name">Reduction in open dumping incidents</td><td>Impact</td><td>140/mo</td><td>20/mo</td><td>58/mo</td><td>Assembly incident reports</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<!-- ================= TARGETS ================= -->
+<div class="view-pane" id="view-targets">
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Planned vs. Achieved Targets</div></div></div>
     <div class="health-bars" style="margin-bottom:0;">
-      <div><div class="health-row__top"><span>Recycling stations installed</span><b>46/50</b></div><div class="health-row__track"><div class="health-row__fill" style="width:92%; background:var(--gayo-green)"></div></div></div>
-      <div><div class="health-row__top"><span>Households enrolled</span><b>78%</b></div><div class="health-row__track"><div class="health-row__fill" style="width:78%; background:var(--gayo-green)"></div></div></div>
-      <div><div class="health-row__top"><span>Waste diverted from landfill</span><b>61%</b></div><div class="health-row__track"><div class="health-row__fill" style="width:61%; background:var(--status-warning)"></div></div></div>
+      <div><div class="health-row__top"><span>Recycling stations (Year 3 target: 50)</span><b>46 achieved</b></div><div class="health-row__track"><div class="health-row__fill" style="width:92%; background:var(--gayo-green)"></div></div></div>
+      <div><div class="health-row__top"><span>Households enrolled (Year 3 target: 12,000)</span><b>9,360 achieved</b></div><div class="health-row__track"><div class="health-row__fill" style="width:78%; background:var(--gayo-green)"></div></div></div>
+      <div><div class="health-row__top"><span>Waste diverted (Year 3 target: 80%)</span><b>61% achieved</b></div><div class="health-row__track"><div class="health-row__fill" style="width:61%; background:var(--status-warning)"></div></div></div>
+      <div><div class="health-row__top"><span>Vendor markets operational (Year 3 target: 8)</span><b>5 achieved</b></div><div class="health-row__track"><div class="health-row__fill" style="width:63%; background:var(--status-warning)"></div></div></div>
     </div>
-  </div>
+  </section>
+</div>
 
-  <div class="panel">
-    <div class="panel__head"><div><div class="panel__title">Recent Activity</div></div></div>
-    <div class="timeline">
-      <div class="timeline-item"><div class="timeline-dot"><svg><use href="#ic-upload"/></svg></div><div><div class="timeline-time">2 days ago</div><div class="timeline-text">Site-visit photo evidence uploaded for Sub-district 3</div></div></div>
-      <div class="timeline-item"><div class="timeline-dot"><svg><use href="#ic-check-square"/></svg></div><div><div class="timeline-time">5 days ago</div><div class="timeline-text">Monthly household enrollment activity marked complete</div></div></div>
-      <div class="timeline-item"><div class="timeline-dot"><svg><use href="#ic-dollar"/></svg></div><div><div class="timeline-time">1 week ago</div><div class="timeline-text">Expenditure report reconciled — $42,000</div></div></div>
-      <div class="timeline-item"><div class="timeline-dot"><svg><use href="#ic-target"/></svg></div><div><div class="timeline-time">2 weeks ago</div><div class="timeline-text">Quarterly indicator review completed by MERL</div></div></div>
+<!-- ================= BENEFICIARIES ================= -->
+<div class="view-pane" id="view-beneficiaries">
+  <section class="panel">
+    <div class="beneficiary-hero">
+      <div class="beneficiary-hero__num">41,200</div>
+      <div class="beneficiary-hero__label">Beneficiaries reached by this project</div>
     </div>
-  </div>
-</section>
+    <div class="demo-bars">
+      <div class="demo-bar__row"><span class="demo-bar__name">Women</span><div class="demo-bar__track"><div class="demo-bar__fill" style="width:52%; background:var(--gayo-green)"></div></div><span class="demo-bar__val">52%</span></div>
+      <div class="demo-bar__row"><span class="demo-bar__name">Men</span><div class="demo-bar__track"><div class="demo-bar__fill" style="width:48%; background:var(--gayo-navy)"></div></div><span class="demo-bar__val">48%</span></div>
+      <div class="demo-bar__row"><span class="demo-bar__name">Youth (under 35)</span><div class="demo-bar__track"><div class="demo-bar__fill" style="width:44%; background:var(--gayo-lime)"></div></div><span class="demo-bar__val">44%</span></div>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Registered Groups</div><div class="panel__subtitle"><a href="beneficiaries.html" style="color:var(--gayo-green); font-weight:600;">Open full Beneficiary Registry →</a></div></div></div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Group</th><th>Type</th><th>Members</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr onclick="location.href='beneficiaries.html'"><td class="proj-name">Sub-district 3 Waste Pickers Association</td><td>Group</td><td>84</td><td><span class="pill pill--ontrack">Active</span></td></tr>
+          <tr onclick="location.href='beneficiaries.html'"><td class="proj-name">Accra Household Registry — Batch 12</td><td>Households</td><td>1,240</td><td><span class="pill pill--ontrack">Active</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
 
-<section class="panel">
-  <div class="panel__head"><div><div class="panel__title">Documents &amp; Evidence</div><div class="panel__subtitle"><a href="documents.html" style="color:var(--gayo-green); font-weight:600;">View all in Documents →</a></div></div></div>
-  <div class="table-wrap">
-    <table class="data-table">
-      <thead><tr><th>Name</th><th>Type</th><th>Uploaded</th><th>Owner</th></tr></thead>
-      <tbody>
-        <tr onclick="location.href='documents.html'"><td class="proj-name">Q3 Narrative Report.pdf</td><td>Report</td><td>3 days ago</td><td>Ama Kwakyewaa</td></tr>
-        <tr onclick="location.href='evidence-repository.html'"><td class="proj-name">Site visit — Sub-district 3 (12 photos)</td><td>Evidence</td><td>2 days ago</td><td>Field Officer</td></tr>
-        <tr onclick="location.href='documents.html'"><td class="proj-name">Signed MOU — Accra Metropolitan Assembly</td><td>Agreement</td><td>3 months ago</td><td>Fadl</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+<!-- ================= DOCUMENTS ================= -->
+<div class="view-pane" id="view-documents">
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Documents &amp; Evidence</div><div class="panel__subtitle"><a href="documents.html" style="color:var(--gayo-green); font-weight:600;">View all in Documents →</a></div></div></div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Name</th><th>Type</th><th>Uploaded</th><th>Owner</th></tr></thead>
+        <tbody>
+          <tr onclick="location.href='documents.html'"><td class="proj-name">Q3 Narrative Report.pdf</td><td>Report</td><td>3 days ago</td><td>Ama Kwakyewaa</td></tr>
+          <tr onclick="location.href='evidence-repository.html'"><td class="proj-name">Site visit — Sub-district 3 (12 photos)</td><td>Evidence</td><td>2 days ago</td><td>Field Officer</td></tr>
+          <tr onclick="location.href='documents.html'"><td class="proj-name">Signed MOU — Accra Metropolitan Assembly</td><td>Agreement</td><td>3 months ago</td><td>Fadl</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<!-- ================= BUDGET ================= -->
+<div class="view-pane" id="view-budget">
+  <section class="panel">
+    <div class="finance-figures">
+      <div class="stat-item"><div class="stat-item__label">Total Budget</div><div class="stat-item__value">$780,000</div></div>
+      <div class="stat-item"><div class="stat-item__label">Spent</div><div class="stat-item__value">$612,000</div></div>
+      <div class="stat-item"><div class="stat-item__label">Utilization</div><div class="stat-item__value">78%</div></div>
+      <div class="stat-item"><div class="stat-item__label">Remaining</div><div class="stat-item__value">$168,000</div></div>
+    </div>
+    <div class="budget-bar__track"><div class="budget-bar__fill" style="width:78%"></div></div>
+    <div class="budget-bar__label"><span>Budget utilization</span><span>78%</span></div>
+  </section>
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Budget Lines</div></div></div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Line Item</th><th>Allocated</th><th>Spent</th><th>Remaining</th></tr></thead>
+        <tbody>
+          <tr><td class="proj-name">Recycling station infrastructure</td><td>$320,000</td><td>$294,000</td><td>$26,000</td></tr>
+          <tr><td class="proj-name">Community sensitization &amp; staffing</td><td>$210,000</td><td>$168,000</td><td>$42,000</td></tr>
+          <tr><td class="proj-name">Vendor market development</td><td>$150,000</td><td>$98,000</td><td>$52,000</td></tr>
+          <tr><td class="proj-name">Monitoring, evaluation &amp; reporting</td><td>$100,000</td><td>$52,000</td><td>$48,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<!-- ================= REPORTS ================= -->
+<div class="view-pane" id="view-reports">
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Project Reports</div><div class="panel__subtitle"><a href="reports-analytics.html" style="color:var(--gayo-green); font-weight:600;">Open Reports &amp; Analytics →</a></div></div></div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Report</th><th>Type</th><th>Period</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr onclick="location.href='reports-analytics.html'"><td class="proj-name">Q3 2026 Narrative Report</td><td>Donor</td><td>Jul – Sep 2026</td><td><span class="pill pill--risk">Pending Approval</span></td></tr>
+          <tr onclick="location.href='reports-analytics.html'"><td class="proj-name">UNEP Semi-Annual Report</td><td>Donor</td><td>Jan – Jun 2026</td><td><span class="pill pill--ontrack">Approved</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<!-- ================= PHOTOS ================= -->
+<div class="view-pane" id="view-photos">
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Project Photos</div><div class="panel__subtitle">Visual evidence from field visits</div></div></div>
+    <div class="card-grid">
+      <div class="info-card"><div class="info-card__icon"><svg><use href="#ic-image"/></svg></div><div class="info-card__title">Recycling station opening — Sub-district 3</div><div class="info-card__desc">12 photos · Uploaded 2 days ago</div></div>
+      <div class="info-card"><div class="info-card__icon"><svg><use href="#ic-image"/></svg></div><div class="info-card__title">Household enrollment drive</div><div class="info-card__desc">8 photos · Uploaded 1 week ago</div></div>
+      <div class="info-card"><div class="info-card__icon"><svg><use href="#ic-image"/></svg></div><div class="info-card__title">Vendor market before/after</div><div class="info-card__desc">6 photos · Uploaded 3 weeks ago</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= LEARNING ================= -->
+<div class="view-pane" id="view-learning">
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Lessons Learned &amp; Recommendations</div></div></div>
+    <div class="card-grid">
+      <div class="info-card"><div class="info-card__title">Success</div><div class="info-card__desc">Pairing recycling stations with a vendor income scheme drove faster household enrollment than sensitization alone.</div></div>
+      <div class="info-card"><div class="info-card__title">Challenge</div><div class="info-card__desc">Council permit delays in Sub-district 5 pushed back two station installations by six weeks.</div></div>
+      <div class="info-card"><div class="info-card__title">Recommendation</div><div class="info-card__desc">Initiate permit applications at proposal stage for future municipal waste projects.</div></div>
+    </div>
+  </section>
+  <section class="empty-note">
+    <svg style="width:16px;height:16px; flex:none;"><use href="#ic-archive"/></svg>
+    <div><b>On closeout:</b> this project's dashboard is archived and hidden from the active portfolio view — everything on this Learning tab is retained and stays searchable in the Knowledge Centre for future projects.</div>
+  </section>
+</div>
+
+<!-- ================= DATA COLLECTION ================= -->
+<div class="view-pane" id="view-datacollection">
+  <section class="panel">
+    <div class="panel__head"><div><div class="panel__title">Project Forms</div><div class="panel__subtitle"><a href="data-collection.html" style="color:var(--gayo-green); font-weight:600;">Open full Data Collection →</a></div></div></div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Form</th><th>Submissions</th><th>Last Submission</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr onclick="location.href='data-collection.html'"><td class="proj-name">Household Waste Segregation Survey</td><td>1,240</td><td>2 hours ago</td><td><span class="pill pill--ontrack">Active</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
 
 
       <footer class="statusbar">
@@ -222,6 +459,7 @@
 </p>
 <script src="assets/vendor/chart.umd.min.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="assets/js/role.js"></script>
 
 </body>
 </html>

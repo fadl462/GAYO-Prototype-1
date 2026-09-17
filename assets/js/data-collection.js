@@ -1,27 +1,19 @@
 /* ==========================================================================
-   Data Collection page — view tabs, form builder, analytics charts
+   Data Collection page — form builder, analytics charts
+   (view-tab switching itself now lives in shared app.js)
    ========================================================================== */
 
 (function () {
   "use strict";
 
   /* ---------------------------------------------------------------- */
-  /* View tabs                                                          */
+  /* Analytics charts build lazily the first time that tab is shown    */
   /* ---------------------------------------------------------------- */
-  var tabBtns = document.querySelectorAll(".view-tabs button");
-  var panes = document.querySelectorAll(".view-pane");
-
-  function showView(key) {
-    tabBtns.forEach(function (b) { b.classList.toggle("is-active", b.getAttribute("data-view") === key); });
-    panes.forEach(function (p) { p.classList.toggle("is-active", p.id === "view-" + key); });
-    if (key === "analytics" && !window._dcChartsBuilt) {
+  window.addEventListener("viewtab:shown", function (e) {
+    if (e.detail.key === "analytics" && !window._dcChartsBuilt) {
       buildAnalyticsCharts();
       window._dcChartsBuilt = true;
     }
-  }
-
-  tabBtns.forEach(function (btn) {
-    btn.addEventListener("click", function () { showView(btn.getAttribute("data-view")); });
   });
 
   // "Create Form" header button jumps straight to the builder tab
@@ -29,7 +21,7 @@
   if (createFormBtn) {
     createFormBtn.addEventListener("click", function (e) {
       e.preventDefault();
-      showView("builder");
+      if (window._showView) window._showView("builder");
       document.getElementById("view-builder").scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
@@ -41,10 +33,20 @@
     text: { label: "Text", icon: "ic-text" },
     number: { label: "Number", icon: "ic-hash" },
     date: { label: "Date", icon: "ic-calendar" },
+    time: { label: "Time", icon: "ic-clock" },
     choice: { label: "Single Choice", icon: "ic-check-square" },
     multichoice: { label: "Multiple Choice", icon: "ic-list" },
+    dropdown: { label: "Dropdown", icon: "ic-caret-box" },
+    ranking: { label: "Ranking", icon: "ic-ranking" },
+    likert: { label: "Likert Scale", icon: "ic-likert" },
+    matrix: { label: "Matrix", icon: "ic-grid" },
+    repeat: { label: "Repeat Group", icon: "ic-repeat" },
     location: { label: "GPS Location", icon: "ic-pin" },
-    photo: { label: "Photo / Media", icon: "ic-image" },
+    photo: { label: "Photo", icon: "ic-image" },
+    video: { label: "Video", icon: "ic-video" },
+    audio: { label: "Audio", icon: "ic-audio" },
+    barcode: { label: "Barcode", icon: "ic-barcode" },
+    qrcode: { label: "QR Code", icon: "ic-qrcode" },
     signature: { label: "Signature", icon: "ic-signature" },
     calc: { label: "Calculation", icon: "ic-calc" },
     note: { label: "Note / Instructions", icon: "ic-file" }
@@ -109,7 +111,7 @@
       var original = publishBtn.innerHTML;
       publishBtn.innerHTML = '<svg><use href="#ic-check-square"/></svg>Published';
       setTimeout(function () {
-        showView("forms");
+        if (window._showView) window._showView("forms");
         publishBtn.innerHTML = original;
       }, 900);
     });
